@@ -1,5 +1,4 @@
-﻿using e_shop_backend_esense.Migrations;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace e_shop_backend_esense.Models
 {

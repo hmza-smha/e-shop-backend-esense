@@ -1,4 +1,5 @@
 ﻿using e_shop_backend_esense.Data;
+using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,8 +34,15 @@ namespace e_shop_backend_esense.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(string? categoryName)
-        {
+        public async Task<IActionResult> GetProducts(
+            string categoryName, 
+            string? textSearch, 
+            bool? inStuck, 
+            bool? available, 
+            decimal? priceFrom,
+            decimal? priceTo
+            ) {
+
             if (categoryName == null)
                 throw new NullReferenceException();
 
@@ -46,18 +54,44 @@ namespace e_shop_backend_esense.Controllers
                 .Select(x => new
                 {
                     x.Name,
-                    products = x.Products.Select(x => new
+                    products = x.Products
+                    .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
+                    .Where(x => inStuck != null ? x.InStuck == inStuck : true)
+                    .Where(x => available !=  null ? x.Available == available : true)
+                    .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 1)
+                    .Where(x => priceTo != null ? x.Price <= priceTo : true)
+                    .Select(x => new
                     {
                         x.Id,
-                        x.Name
+                        x.Name,
+                        x.Price,
+                        x.InStuck,
+                        x.OldPrice,
+                        x.ImageURL,
+                        x.Available,
+                        x.Description,
+                        x.AdditionalInfo
                     }),
                     subProducts = x.SubCategories.Select(c => new
                     {
                         c.Name,
-                        products = c.Products.Select(x => new
+                        products = c.Products
+                        .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
+                        .Where(x => inStuck != null ? x.InStuck == inStuck : true)
+                        .Where(x => available != null ? x.Available == available : true)
+                        .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 1)
+                        .Where(x => priceTo != null ? x.Price <= priceTo : true)
+                        .Select(x => new
                         {
                             x.Id,
-                            x.Name
+                            x.Name,
+                            x.Price,
+                            x.InStuck,
+                            x.OldPrice,
+                            x.ImageURL,
+                            x.Available,
+                            x.Description,
+                            x.AdditionalInfo
                         })
                     })
                 })
@@ -65,5 +99,22 @@ namespace e_shop_backend_esense.Controllers
 
             return Ok(cat);
         }
+
+        private Product ProductFactory(Product product)
+        {
+            return new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                OldPrice = product.OldPrice,
+                InStuck = product.InStuck,
+                Available = product.Available,
+                ImageURL = product.ImageURL,
+                Description = product.Description,
+                AdditionalInfo = product.AdditionalInfo
+            };
+        }
+
     }
 }

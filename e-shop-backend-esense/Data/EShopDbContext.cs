@@ -1,5 +1,4 @@
-﻿using e_shop_backend_esense.Migrations;
-using e_shop_backend_esense.Models;
+﻿using e_shop_backend_esense.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace e_shop_backend_esense.Data
