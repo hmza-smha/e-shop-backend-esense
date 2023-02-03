@@ -20,7 +20,7 @@ namespace e_shop_backend_esense.Controllers
         [HttpGet("Tree")]
         public async Task<IActionResult> GetTree()
         {
-            var cat = await _context.Categories
+            var catergoriesTree = await _context.Categories
                 .Include(x => x.SubCategories)
                 .Where(x => x.ParentCategory == null)
                 .Select(x => new
@@ -30,7 +30,7 @@ namespace e_shop_backend_esense.Controllers
                 })
                 .ToListAsync();
 
-            return Ok(cat);
+            return Ok(catergoriesTree);
         }
 
         [HttpGet]
@@ -70,7 +70,8 @@ namespace e_shop_backend_esense.Controllers
                         x.ImageURL,
                         x.Available,
                         x.Description,
-                        x.AdditionalInfo
+                        x.AdditionalInfo,
+                        x.Reviews
                     }),
                     subProducts = x.SubCategories.Select(c => new
                     {
@@ -91,7 +92,8 @@ namespace e_shop_backend_esense.Controllers
                             x.ImageURL,
                             x.Available,
                             x.Description,
-                            x.AdditionalInfo
+                            x.AdditionalInfo,
+                            x.Reviews
                         })
                     })
                 })

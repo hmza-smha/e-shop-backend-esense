@@ -24,6 +24,9 @@ namespace e_shop_backend_esense.Models
         public bool Available { get; set; }
 
         public int CategoryId { get; set; }
+
         public Category Category { get; set; }
+
+        public List<Review> Reviews { get; set; }
     }
 }
