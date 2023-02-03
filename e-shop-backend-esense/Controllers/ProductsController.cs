@@ -1,5 +1,4 @@
 ﻿using e_shop_backend_esense.Data;
-using e_shop_backend_esense.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
