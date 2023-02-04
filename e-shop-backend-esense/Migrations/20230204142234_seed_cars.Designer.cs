@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using e_shop_backend_esense.Data;
 
@@ -11,9 +12,10 @@ using e_shop_backend_esense.Data;
 namespace e_shop_backend_esense.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    partial class EShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230204142234_seed_cars")]
+    partial class seed_cars
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -264,57 +266,57 @@ namespace e_shop_backend_esense.Migrations
                         {
                             Id = 2,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "BMW 0",
-                            OldPrice = 50m,
-                            Price = 6767m,
-                            Rate = 0
+                            OldPrice = -500m,
+                            Price = 9030m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 10,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "BMW 1",
-                            OldPrice = 50m,
-                            Price = 6871m,
+                            OldPrice = -500m,
+                            Price = 5308m,
                             Rate = 2
                         },
                         new
                         {
                             Id = 18,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "BMW 2",
-                            OldPrice = 50m,
-                            Price = 5941m,
-                            Rate = 3
+                            OldPrice = -500m,
+                            Price = 7514m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 26,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "BMW 3",
-                            OldPrice = 50m,
-                            Price = 6307m,
-                            Rate = 4
+                            OldPrice = -500m,
+                            Price = 5262m,
+                            Rate = 5
                         },
                         new
                         {
@@ -326,9 +328,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "BMW 4",
-                            OldPrice = 50m,
-                            Price = 6349m,
-                            Rate = 4
+                            OldPrice = -500m,
+                            Price = 7439m,
+                            Rate = 0
                         },
                         new
                         {
@@ -340,9 +342,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "BMW 5",
-                            OldPrice = 50m,
-                            Price = 7780m,
-                            Rate = 4
+                            OldPrice = -500m,
+                            Price = 9175m,
+                            Rate = 0
                         },
                         new
                         {
@@ -352,11 +354,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "BMW 6",
-                            OldPrice = 50m,
-                            Price = 8960m,
-                            Rate = 0
+                            OldPrice = -500m,
+                            Price = 9339m,
+                            Rate = 3
                         },
                         new
                         {
@@ -366,11 +368,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "BMW 7",
-                            OldPrice = 50m,
-                            Price = 9669m,
-                            Rate = 2
+                            OldPrice = -500m,
+                            Price = 9789m,
+                            Rate = 4
                         },
                         new
                         {
@@ -382,8 +384,8 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "BMW 8",
-                            OldPrice = 50m,
-                            Price = 6588m,
+                            OldPrice = -500m,
+                            Price = 6171m,
                             Rate = 0
                         },
                         new
@@ -394,38 +396,38 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "BMW 9",
-                            OldPrice = 50m,
-                            Price = 6256m,
+                            OldPrice = -500m,
+                            Price = 7991m,
                             Rate = 2
                         },
                         new
                         {
                             Id = 3,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "honda 0",
-                            OldPrice = 500m,
-                            Price = 8951m,
-                            Rate = 5
+                            OldPrice = 8530m,
+                            Price = 7349m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 11,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "honda 1",
-                            OldPrice = 500m,
-                            Price = 8044m,
+                            OldPrice = 4808m,
+                            Price = 9742m,
                             Rate = 4
                         },
                         new
@@ -436,11 +438,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "honda 2",
-                            OldPrice = 500m,
-                            Price = 7422m,
-                            Rate = 3
+                            OldPrice = 7014m,
+                            Price = 9214m,
+                            Rate = 2
                         },
                         new
                         {
@@ -452,65 +454,65 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "honda 3",
-                            OldPrice = 500m,
-                            Price = 8411m,
-                            Rate = 0
+                            OldPrice = 4762m,
+                            Price = 7007m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 35,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "honda 4",
-                            OldPrice = 500m,
-                            Price = 7247m,
-                            Rate = 4
+                            OldPrice = 6939m,
+                            Price = 5434m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 43,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "honda 5",
-                            OldPrice = 500m,
-                            Price = 5791m,
-                            Rate = 4
+                            OldPrice = 8675m,
+                            Price = 7032m,
+                            Rate = 0
                         },
                         new
                         {
                             Id = 51,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "honda 6",
-                            OldPrice = 500m,
-                            Price = 5963m,
+                            OldPrice = 8839m,
+                            Price = 6648m,
                             Rate = 1
                         },
                         new
                         {
                             Id = 59,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "honda 7",
-                            OldPrice = 500m,
-                            Price = 7447m,
-                            Rate = 4
+                            OldPrice = 9289m,
+                            Price = 6494m,
+                            Rate = 5
                         },
                         new
                         {
@@ -520,11 +522,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "honda 8",
-                            OldPrice = 500m,
-                            Price = 6429m,
-                            Rate = 0
+                            OldPrice = 5671m,
+                            Price = 6750m,
+                            Rate = 2
                         },
                         new
                         {
@@ -534,24 +536,24 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "honda 9",
-                            OldPrice = 500m,
-                            Price = 5327m,
-                            Rate = 3
+                            OldPrice = 7491m,
+                            Price = 5993m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 4,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "toyota 0",
-                            OldPrice = 500m,
-                            Price = 8825m,
+                            OldPrice = 8530m,
+                            Price = 9717m,
                             Rate = 1
                         },
                         new
@@ -564,9 +566,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "toyota 1",
-                            OldPrice = 500m,
-                            Price = 6910m,
-                            Rate = 0
+                            OldPrice = 4808m,
+                            Price = 9918m,
+                            Rate = 4
                         },
                         new
                         {
@@ -578,121 +580,121 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "toyota 2",
-                            OldPrice = 500m,
-                            Price = 8972m,
-                            Rate = 5
+                            OldPrice = 7014m,
+                            Price = 9028m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 28,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 13,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "toyota 3",
-                            OldPrice = 500m,
-                            Price = 5468m,
-                            Rate = 2
-                        },
-                        new
-                        {
-                            Id = 36,
                             AdditionalInfo = "{}",
                             Available = true,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
+                            Name = "toyota 3",
+                            OldPrice = 4762m,
+                            Price = 7484m,
+                            Rate = 1
+                        },
+                        new
+                        {
+                            Id = 36,
+                            AdditionalInfo = "{}",
+                            Available = false,
+                            CategoryId = 13,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = true,
                             Name = "toyota 4",
-                            OldPrice = 500m,
-                            Price = 5276m,
+                            OldPrice = 6939m,
+                            Price = 5552m,
                             Rate = 1
                         },
                         new
                         {
                             Id = 44,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "toyota 5",
-                            OldPrice = 500m,
-                            Price = 9006m,
-                            Rate = 2
+                            OldPrice = 8675m,
+                            Price = 9167m,
+                            Rate = 0
                         },
                         new
                         {
                             Id = 52,
+                            AdditionalInfo = "{}",
+                            Available = true,
+                            CategoryId = 13,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = false,
+                            Name = "toyota 6",
+                            OldPrice = 8839m,
+                            Price = 7512m,
+                            Rate = 1
+                        },
+                        new
+                        {
+                            Id = 60,
+                            AdditionalInfo = "{}",
+                            Available = true,
+                            CategoryId = 13,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = false,
+                            Name = "toyota 7",
+                            OldPrice = 9289m,
+                            Price = 5739m,
+                            Rate = 0
+                        },
+                        new
+                        {
+                            Id = 68,
                             AdditionalInfo = "{}",
                             Available = false,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
-                            Name = "toyota 6",
-                            OldPrice = 500m,
-                            Price = 8398m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 60,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 13,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "toyota 7",
-                            OldPrice = 500m,
-                            Price = 5156m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 68,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 13,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
                             Name = "toyota 8",
-                            OldPrice = 500m,
-                            Price = 9790m,
+                            OldPrice = 5671m,
+                            Price = 9182m,
                             Rate = 5
                         },
                         new
                         {
                             Id = 76,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "toyota 9",
-                            OldPrice = 500m,
-                            Price = 5819m,
-                            Rate = 0
+                            OldPrice = 7491m,
+                            Price = 5857m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 5,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "mercedes 0",
-                            OldPrice = 500m,
-                            Price = 9024m,
-                            Rate = 3
+                            OldPrice = 8530m,
+                            Price = 5357m,
+                            Rate = 2
                         },
                         new
                         {
@@ -704,9 +706,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "mercedes 1",
-                            OldPrice = 500m,
-                            Price = 8970m,
-                            Rate = 0
+                            OldPrice = 4808m,
+                            Price = 8967m,
+                            Rate = 4
                         },
                         new
                         {
@@ -718,36 +720,36 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "mercedes 2",
-                            OldPrice = 500m,
-                            Price = 9241m,
-                            Rate = 3
+                            OldPrice = 7014m,
+                            Price = 9760m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 29,
+                            AdditionalInfo = "{}",
+                            Available = true,
+                            CategoryId = 14,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = true,
+                            Name = "mercedes 3",
+                            OldPrice = 4762m,
+                            Price = 6096m,
+                            Rate = 2
+                        },
+                        new
+                        {
+                            Id = 37,
                             AdditionalInfo = "{}",
                             Available = false,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
-                            Name = "mercedes 3",
-                            OldPrice = 500m,
-                            Price = 8582m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 37,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 14,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
                             Name = "mercedes 4",
-                            OldPrice = 500m,
-                            Price = 9036m,
+                            OldPrice = 6939m,
+                            Price = 6014m,
                             Rate = 3
                         },
                         new
@@ -760,37 +762,37 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "mercedes 5",
-                            OldPrice = 500m,
-                            Price = 6148m,
-                            Rate = 4
+                            OldPrice = 8675m,
+                            Price = 6081m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 53,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "mercedes 6",
-                            OldPrice = 500m,
-                            Price = 9987m,
-                            Rate = 0
+                            OldPrice = 8839m,
+                            Price = 9172m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 61,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "mercedes 7",
-                            OldPrice = 500m,
-                            Price = 6801m,
-                            Rate = 2
+                            OldPrice = 9289m,
+                            Price = 7077m,
+                            Rate = 5
                         },
                         new
                         {
@@ -800,11 +802,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "mercedes 8",
-                            OldPrice = 500m,
-                            Price = 8361m,
-                            Rate = 4
+                            OldPrice = 5671m,
+                            Price = 7223m,
+                            Rate = 3
                         },
                         new
                         {
@@ -814,11 +816,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "mercedes 9",
-                            OldPrice = 500m,
-                            Price = 7329m,
-                            Rate = 4
+                            OldPrice = 7491m,
+                            Price = 5929m,
+                            Rate = 5
                         },
                         new
                         {
@@ -830,9 +832,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "lexus 0",
-                            OldPrice = 500m,
-                            Price = 8507m,
-                            Rate = 0
+                            OldPrice = 8530m,
+                            Price = 8885m,
+                            Rate = 1
                         },
                         new
                         {
@@ -844,9 +846,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "lexus 1",
-                            OldPrice = 500m,
-                            Price = 6970m,
-                            Rate = 2
+                            OldPrice = 4808m,
+                            Price = 7029m,
+                            Rate = 1
                         },
                         new
                         {
@@ -856,39 +858,39 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "lexus 2",
-                            OldPrice = 500m,
-                            Price = 6206m,
-                            Rate = 5
+                            OldPrice = 7014m,
+                            Price = 5079m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 30,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 23,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "lexus 3",
-                            OldPrice = 500m,
-                            Price = 5533m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 38,
                             AdditionalInfo = "{}",
                             Available = true,
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
-                            Name = "lexus 4",
-                            OldPrice = 500m,
-                            Price = 6720m,
+                            Name = "lexus 3",
+                            OldPrice = 4762m,
+                            Price = 9959m,
                             Rate = 5
+                        },
+                        new
+                        {
+                            Id = 38,
+                            AdditionalInfo = "{}",
+                            Available = false,
+                            CategoryId = 23,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = false,
+                            Name = "lexus 4",
+                            OldPrice = 6939m,
+                            Price = 8257m,
+                            Rate = 2
                         },
                         new
                         {
@@ -900,9 +902,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "lexus 5",
-                            OldPrice = 500m,
-                            Price = 5209m,
-                            Rate = 4
+                            OldPrice = 8675m,
+                            Price = 8694m,
+                            Rate = 1
                         },
                         new
                         {
@@ -914,9 +916,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "lexus 6",
-                            OldPrice = 500m,
-                            Price = 9616m,
-                            Rate = 1
+                            OldPrice = 8839m,
+                            Price = 7349m,
+                            Rate = 2
                         },
                         new
                         {
@@ -926,52 +928,52 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "lexus 7",
-                            OldPrice = 500m,
-                            Price = 7262m,
-                            Rate = 1
+                            OldPrice = 9289m,
+                            Price = 5178m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 70,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "lexus 8",
-                            OldPrice = 500m,
-                            Price = 6398m,
+                            OldPrice = 5671m,
+                            Price = 8586m,
                             Rate = 5
                         },
                         new
                         {
                             Id = 78,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "lexus 9",
-                            OldPrice = 500m,
-                            Price = 7473m,
-                            Rate = 4
+                            OldPrice = 7491m,
+                            Price = 6485m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 7,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "maybach 0",
-                            OldPrice = 500m,
-                            Price = 9748m,
+                            OldPrice = 8530m,
+                            Price = 9655m,
                             Rate = 2
                         },
                         new
@@ -982,53 +984,53 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "maybach 1",
-                            OldPrice = 500m,
-                            Price = 9605m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 23,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 24,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "maybach 2",
-                            OldPrice = 500m,
-                            Price = 5524m,
+                            OldPrice = 4808m,
+                            Price = 8762m,
                             Rate = 3
                         },
                         new
                         {
-                            Id = 31,
+                            Id = 23,
                             AdditionalInfo = "{}",
                             Available = false,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
-                            Name = "maybach 3",
-                            OldPrice = 500m,
-                            Price = 7779m,
-                            Rate = 1
+                            Name = "maybach 2",
+                            OldPrice = 7014m,
+                            Price = 7698m,
+                            Rate = 5
                         },
                         new
                         {
-                            Id = 39,
+                            Id = 31,
                             AdditionalInfo = "{}",
                             Available = true,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = true,
+                            Name = "maybach 3",
+                            OldPrice = 4762m,
+                            Price = 9445m,
+                            Rate = 5
+                        },
+                        new
+                        {
+                            Id = 39,
+                            AdditionalInfo = "{}",
+                            Available = false,
+                            CategoryId = 24,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "maybach 4",
-                            OldPrice = 500m,
-                            Price = 5724m,
-                            Rate = 0
+                            OldPrice = 6939m,
+                            Price = 6358m,
+                            Rate = 1
                         },
                         new
                         {
@@ -1038,25 +1040,25 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "maybach 5",
-                            OldPrice = 500m,
-                            Price = 9197m,
-                            Rate = 4
+                            OldPrice = 8675m,
+                            Price = 6376m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 55,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "maybach 6",
-                            OldPrice = 500m,
-                            Price = 9012m,
-                            Rate = 2
+                            OldPrice = 8839m,
+                            Price = 6236m,
+                            Rate = 0
                         },
                         new
                         {
@@ -1066,67 +1068,67 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "maybach 7",
-                            OldPrice = 500m,
-                            Price = 8239m,
-                            Rate = 3
+                            OldPrice = 9289m,
+                            Price = 9912m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 71,
+                            AdditionalInfo = "{}",
+                            Available = false,
+                            CategoryId = 24,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = false,
+                            Name = "maybach 8",
+                            OldPrice = 5671m,
+                            Price = 8096m,
+                            Rate = 0
+                        },
+                        new
+                        {
+                            Id = 79,
                             AdditionalInfo = "{}",
                             Available = true,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
-                            Name = "maybach 8",
-                            OldPrice = 500m,
-                            Price = 8992m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 79,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 24,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
                             Name = "maybach 9",
-                            OldPrice = 500m,
-                            Price = 8714m,
-                            Rate = 0
+                            OldPrice = 7491m,
+                            Price = 5417m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 8,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "benz 0",
-                            OldPrice = 500m,
-                            Price = 8766m,
-                            Rate = 3
+                            OldPrice = 8530m,
+                            Price = 7271m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 16,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "benz 1",
-                            OldPrice = 500m,
-                            Price = 6067m,
-                            Rate = 4
+                            OldPrice = 4808m,
+                            Price = 5009m,
+                            Rate = 3
                         },
                         new
                         {
@@ -1136,81 +1138,81 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "benz 2",
-                            OldPrice = 500m,
-                            Price = 6293m,
-                            Rate = 3
+                            OldPrice = 7014m,
+                            Price = 8909m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 32,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "benz 3",
-                            OldPrice = 500m,
-                            Price = 6508m,
+                            OldPrice = 4762m,
+                            Price = 6859m,
                             Rate = 5
                         },
                         new
                         {
                             Id = 40,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "benz 4",
-                            OldPrice = 500m,
-                            Price = 5619m,
-                            Rate = 3
+                            OldPrice = 6939m,
+                            Price = 8064m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 48,
                             AdditionalInfo = "{}",
-                            Available = true,
+                            Available = false,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
                             Name = "benz 5",
-                            OldPrice = 500m,
-                            Price = 8436m,
-                            Rate = 3
+                            OldPrice = 8675m,
+                            Price = 8845m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 56,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "benz 6",
-                            OldPrice = 500m,
-                            Price = 7074m,
-                            Rate = 1
+                            OldPrice = 8839m,
+                            Price = 6284m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 64,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "benz 7",
-                            OldPrice = 500m,
-                            Price = 8568m,
-                            Rate = 1
+                            OldPrice = 9289m,
+                            Price = 8115m,
+                            Rate = 5
                         },
                         new
                         {
@@ -1220,10 +1222,10 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "benz 8",
-                            OldPrice = 500m,
-                            Price = 6374m,
+                            OldPrice = 5671m,
+                            Price = 5156m,
                             Rate = 4
                         },
                         new
@@ -1234,11 +1236,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "benz 9",
-                            OldPrice = 500m,
-                            Price = 9814m,
-                            Rate = 2
+                            OldPrice = 7491m,
+                            Price = 5904m,
+                            Rate = 1
                         },
                         new
                         {
@@ -1250,9 +1252,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "amg 0",
-                            OldPrice = 500m,
-                            Price = 7431m,
-                            Rate = 3
+                            OldPrice = 8530m,
+                            Price = 7951m,
+                            Rate = 0
                         },
                         new
                         {
@@ -1264,51 +1266,51 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "amg 1",
-                            OldPrice = 500m,
-                            Price = 5901m,
-                            Rate = 0
+                            OldPrice = 4808m,
+                            Price = 8968m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 25,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 26,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "amg 2",
-                            OldPrice = 500m,
-                            Price = 9179m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 33,
                             AdditionalInfo = "{}",
                             Available = false,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = true,
-                            Name = "amg 3",
-                            OldPrice = 500m,
-                            Price = 5438m,
-                            Rate = 5
+                            Name = "amg 2",
+                            OldPrice = 7014m,
+                            Price = 7209m,
+                            Rate = 0
                         },
                         new
                         {
-                            Id = 41,
+                            Id = 33,
                             AdditionalInfo = "{}",
                             Available = true,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
+                            Name = "amg 3",
+                            OldPrice = 4762m,
+                            Price = 5889m,
+                            Rate = 5
+                        },
+                        new
+                        {
+                            Id = 41,
+                            AdditionalInfo = "{}",
+                            Available = false,
+                            CategoryId = 26,
+                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
+                            ImageURL = "https://via.placeholder.com/600x800",
+                            InStuck = false,
                             Name = "amg 4",
-                            OldPrice = 500m,
-                            Price = 7867m,
-                            Rate = 3
+                            OldPrice = 6939m,
+                            Price = 7175m,
+                            Rate = 1
                         },
                         new
                         {
@@ -1320,9 +1322,9 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "amg 5",
-                            OldPrice = 500m,
-                            Price = 5388m,
-                            Rate = 2
+                            OldPrice = 8675m,
+                            Price = 7504m,
+                            Rate = 3
                         },
                         new
                         {
@@ -1332,25 +1334,25 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            InStuck = true,
                             Name = "amg 6",
-                            OldPrice = 500m,
-                            Price = 7527m,
-                            Rate = 0
+                            OldPrice = 8839m,
+                            Price = 6055m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 65,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            InStuck = false,
                             Name = "amg 7",
-                            OldPrice = 500m,
-                            Price = 9946m,
-                            Rate = 5
+                            OldPrice = 9289m,
+                            Price = 8190m,
+                            Rate = 0
                         },
                         new
                         {
@@ -1362,583 +1364,23 @@ namespace e_shop_backend_esense.Migrations
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "amg 8",
-                            OldPrice = 500m,
-                            Price = 8048m,
-                            Rate = 0
+                            OldPrice = 5671m,
+                            Price = 9977m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 81,
                             AdditionalInfo = "{}",
-                            Available = false,
+                            Available = true,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageURL = "https://via.placeholder.com/600x800",
                             InStuck = false,
                             Name = "amg 9",
-                            OldPrice = 500m,
-                            Price = 7870m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 91,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 15,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "laptops 0",
-                            OldPrice = 500m,
-                            Price = 7099m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 99,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 15,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "laptops 1",
-                            OldPrice = 500m,
-                            Price = 8898m,
-                            Rate = 3
-                        },
-                        new
-                        {
-                            Id = 107,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 15,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "laptops 2",
-                            OldPrice = 500m,
-                            Price = 9641m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 115,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 15,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "laptops 3",
-                            OldPrice = 500m,
-                            Price = 5764m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 123,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 15,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "laptops 4",
-                            OldPrice = 500m,
-                            Price = 9549m,
-                            Rate = 3
-                        },
-                        new
-                        {
-                            Id = 92,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 16,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "pc 0",
-                            OldPrice = 500m,
-                            Price = 9888m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 100,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 16,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "pc 1",
-                            OldPrice = 500m,
-                            Price = 6192m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 108,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 16,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "pc 2",
-                            OldPrice = 500m,
-                            Price = 9536m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 116,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 16,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "pc 3",
-                            OldPrice = 500m,
-                            Price = 9461m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 124,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 16,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "pc 4",
-                            OldPrice = 500m,
-                            Price = 9704m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 95,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 27,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "hp 0",
-                            OldPrice = 400m,
-                            Price = 5102m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 103,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 27,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "hp 1",
-                            OldPrice = 400m,
-                            Price = 6899m,
-                            Rate = 3
-                        },
-                        new
-                        {
-                            Id = 111,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 27,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "hp 2",
-                            OldPrice = 400m,
-                            Price = 9155m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 119,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 27,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "hp 3",
-                            OldPrice = 400m,
-                            Price = 9293m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 127,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 27,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "hp 4",
-                            OldPrice = 400m,
-                            Price = 9826m,
-                            Rate = 3
-                        },
-                        new
-                        {
-                            Id = 94,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 29,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "dell 0",
-                            OldPrice = 250m,
-                            Price = 8816m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 102,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 29,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "dell 1",
-                            OldPrice = 250m,
-                            Price = 8124m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 110,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 29,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "dell 2",
-                            OldPrice = 250m,
-                            Price = 5338m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 118,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 29,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "dell 3",
-                            OldPrice = 250m,
-                            Price = 5762m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 126,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 29,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "dell 4",
-                            OldPrice = 250m,
-                            Price = 8400m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 96,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 28,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "maybach 0",
-                            OldPrice = 100m,
-                            Price = 9666m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 104,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 28,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "maybach 1",
-                            OldPrice = 100m,
-                            Price = 7959m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 112,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 28,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "maybach 2",
-                            OldPrice = 100m,
-                            Price = 9546m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 120,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 28,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "maybach 3",
-                            OldPrice = 100m,
-                            Price = 7884m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 128,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 28,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "maybach 4",
-                            OldPrice = 100m,
-                            Price = 8110m,
-                            Rate = 3
-                        },
-                        new
-                        {
-                            Id = 97,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 30,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "benz 0",
-                            OldPrice = 1500m,
-                            Price = 5626m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 105,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 30,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "benz 1",
-                            OldPrice = 1500m,
-                            Price = 7429m,
+                            OldPrice = 7491m,
+                            Price = 9437m,
                             Rate = 2
-                        },
-                        new
-                        {
-                            Id = 113,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 30,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "benz 2",
-                            OldPrice = 1500m,
-                            Price = 6135m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 121,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 30,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "benz 3",
-                            OldPrice = 1500m,
-                            Price = 7324m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 129,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 30,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "benz 4",
-                            OldPrice = 1500m,
-                            Price = 9798m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 98,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 31,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "samsung 0",
-                            OldPrice = 1000m,
-                            Price = 9859m,
-                            Rate = 0
-                        },
-                        new
-                        {
-                            Id = 106,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 31,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
-                            Name = "samsung 1",
-                            OldPrice = 1000m,
-                            Price = 5560m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 114,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 31,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "samsung 2",
-                            OldPrice = 1000m,
-                            Price = 8544m,
-                            Rate = 5
-                        },
-                        new
-                        {
-                            Id = 122,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 31,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "samsung 3",
-                            OldPrice = 1000m,
-                            Price = 8010m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 130,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 31,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "samsung 4",
-                            OldPrice = 1000m,
-                            Price = 9271m,
-                            Rate = 2
-                        },
-                        new
-                        {
-                            Id = 93,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 17,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "monitors 0",
-                            OldPrice = 200m,
-                            Price = 9912m,
-                            Rate = 4
-                        },
-                        new
-                        {
-                            Id = 101,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 17,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "monitors 1",
-                            OldPrice = 200m,
-                            Price = 9846m,
-                            Rate = 1
-                        },
-                        new
-                        {
-                            Id = 109,
-                            AdditionalInfo = "{}",
-                            Available = false,
-                            CategoryId = 17,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "monitors 2",
-                            OldPrice = 200m,
-                            Price = 8893m,
-                            Rate = 3
-                        },
-                        new
-                        {
-                            Id = 117,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 17,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "monitors 3",
-                            OldPrice = 200m,
-                            Price = 6265m,
-                            Rate = 2
-                        },
-                        new
-                        {
-                            Id = 125,
-                            AdditionalInfo = "{}",
-                            Available = true,
-                            CategoryId = 17,
-                            Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
-                            Name = "monitors 4",
-                            OldPrice = 200m,
-                            Price = 7397m,
-                            Rate = 5
                         });
                 });
 

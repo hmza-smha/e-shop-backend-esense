@@ -3,6 +3,7 @@ using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace e_shop_backend_esense.Controllers
 {
@@ -26,7 +27,11 @@ namespace e_shop_backend_esense.Controllers
                 .Select(x => new
                 {
                     x.Name,
-                    children = x.SubCategories.Select(c => c.Name)
+                    children = x.SubCategories.Select(c => new
+                    {
+                        c.Name,
+                        children = c.SubCategories.Select(c => c.Name)
+                    })
                 })
                 .ToListAsync();
 
@@ -94,6 +99,29 @@ namespace e_shop_backend_esense.Controllers
                             x.Description,
                             x.AdditionalInfo,
                             x.Reviews
+                        }),
+                        SubCategories = c.SubCategories.Select(c => new
+                        {
+                            c.Name,
+                            products = c.Products
+                            .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
+                            .Where(x => inStuck != null ? x.InStuck == inStuck : true)
+                            .Where(x => available != null ? x.Available == available : true)
+                            .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 1)
+                            .Where(x => priceTo != null ? x.Price <= priceTo : true)
+                            .Select(x => new
+                            {
+                                x.Id,
+                                x.Name,
+                                x.Price,
+                                x.InStuck,
+                                x.OldPrice,
+                                x.ImageURL,
+                                x.Available,
+                                x.Description,
+                                x.AdditionalInfo,
+                                x.Reviews
+                            })
                         })
                     })
                 })
