@@ -18,10 +18,12 @@ namespace e_shop_backend_esense.Models
         public decimal Price { get; set; }
 
         public decimal? OldPrice { get; set; }
-
+         
         public bool InStuck { get; set; }
 
         public bool Available { get; set; }
+
+        public int? Rate { get; set; }
 
         public int CategoryId { get; set; }
 
