@@ -21,9 +21,21 @@ builder.Services.AddDbContext<EShopDbContext>(opt => opt.UseSqlServer(
     connectionString: configuration.GetConnectionString("EShopDbConnection")
 ));
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:4200") // or AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowAnyOrigin();
+    });
+});
 
 var app = builder.Build();
+
+// enable policy
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
