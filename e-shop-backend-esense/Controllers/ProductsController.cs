@@ -40,7 +40,7 @@ namespace e_shop_backend_esense.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetProducts(
-            string categoryName, 
+            string? categoryName, 
             string? textSearch, 
             bool? inStuck, 
             bool? available, 
@@ -49,7 +49,7 @@ namespace e_shop_backend_esense.Controllers
             ) {
 
             if (categoryName == null)
-                throw new NullReferenceException();
+                categoryName = "cars";
 
             var cat = await _context.Categories
                 .Include(x => x.Products)
