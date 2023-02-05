@@ -100,7 +100,7 @@ namespace e_shop_backend_esense.Controllers
                             x.AdditionalInfo,
                             x.Reviews
                         }),
-                        SubCategories = c.SubCategories.Select(c => new
+                        subProducts = c.SubCategories.Select(c => new
                         {
                             c.Name,
                             products = c.Products
