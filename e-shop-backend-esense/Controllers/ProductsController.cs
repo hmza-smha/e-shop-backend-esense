@@ -130,6 +130,22 @@ namespace e_shop_backend_esense.Controllers
             return Ok(cat);
         }
 
+
+        [HttpGet("id")]
+        public async Task<IActionResult> GetProduct(int id)
+        {
+            var product = await _context.Products
+                .Include(x => x.Category)
+                .Include(x => x.Reviews)
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            if (product == null)
+                return NotFound();
+
+            return Ok(product);
+        }
+
+
         private Product ProductFactory(Product product)
         {
             return new Product
