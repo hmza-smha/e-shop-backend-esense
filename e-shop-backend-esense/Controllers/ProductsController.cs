@@ -131,7 +131,7 @@ namespace e_shop_backend_esense.Controllers
         }
 
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
         {
             var product = await _context.Products
