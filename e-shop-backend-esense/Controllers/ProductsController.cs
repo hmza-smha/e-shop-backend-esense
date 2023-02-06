@@ -51,6 +51,12 @@ namespace e_shop_backend_esense.Controllers
             if (categoryName == null)
                 categoryName = "cars";
 
+            if (inStuck == false)
+                inStuck = null;
+
+            if (available == false)
+                available = null;
+
             var cat = await _context.Categories
                 .Include(x => x.Products)
                 .Include(x => x.SubCategories)
@@ -143,23 +149,6 @@ namespace e_shop_backend_esense.Controllers
                 return NotFound();
 
             return Ok(product);
-        }
-
-
-        private Product ProductFactory(Product product)
-        {
-            return new Product
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Price = product.Price,
-                OldPrice = product.OldPrice,
-                InStuck = product.InStuck,
-                Available = product.Available,
-                ImageURL = product.ImageURL,
-                Description = product.Description,
-                AdditionalInfo = product.AdditionalInfo
-            };
         }
 
     }
