@@ -41,7 +41,7 @@ namespace e_shop_backend_esense.Controllers
             var cat = await _context.Categories
                 .Include(x => x.Products)
                 .Include(x => x.SubCategories)
-                .ThenInclude(x => x.Products)
+                    .ThenInclude(x => x.Products)
                 .Where(x => x.Name.ToLower() == categoryName.ToLower())
                 .Select(x => new
                 {
@@ -50,7 +50,7 @@ namespace e_shop_backend_esense.Controllers
                     .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
                     .Where(x => inStuck != null ? x.InStuck == inStuck : true)
                     .Where(x => available !=  null ? x.Available == available : true)
-                    .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 1)
+                    .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 0)
                     .Where(x => priceTo != null ? x.Price <= priceTo : true)
                     .Select(x => new
                     {
@@ -72,7 +72,7 @@ namespace e_shop_backend_esense.Controllers
                         .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
                         .Where(x => inStuck != null ? x.InStuck == inStuck : true)
                         .Where(x => available != null ? x.Available == available : true)
-                        .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 1)
+                        .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 0)
                         .Where(x => priceTo != null ? x.Price <= priceTo : true)
                         .Select(x => new
                         {
@@ -94,7 +94,7 @@ namespace e_shop_backend_esense.Controllers
                             .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
                             .Where(x => inStuck != null ? x.InStuck == inStuck : true)
                             .Where(x => available != null ? x.Available == available : true)
-                            .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 1)
+                            .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 0)
                             .Where(x => priceTo != null ? x.Price <= priceTo : true)
                             .Select(x => new
                             {

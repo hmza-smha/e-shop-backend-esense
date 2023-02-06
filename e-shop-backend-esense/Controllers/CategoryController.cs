@@ -21,7 +21,7 @@ namespace e_shop_backend_esense.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(int id)
         {
-            var category = await _context.Categories.Include(x=>x.Products).SingleOrDefaultAsync(x => x.Id == id);
+            var category = await _context.Categories.Include(x=> x.Products).SingleOrDefaultAsync(x => x.Id == id);
             if (category == null)
             {
                 return NotFound();
