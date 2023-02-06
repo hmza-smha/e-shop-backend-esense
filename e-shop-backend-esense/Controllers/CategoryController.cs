@@ -21,8 +21,8 @@ namespace e_shop_backend_esense.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
-            if(category == null)
+            var category = await _context.Categories.Include(x=>x.Products).SingleOrDefaultAsync(x => x.Id == id);
+            if (category == null)
             {
                 return NotFound();
             }
@@ -34,6 +34,11 @@ namespace e_shop_backend_esense.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCategory([FromBody] CategoryDTO dto, int? parentCategoryId)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             var category = new Category
             {
                 Name = dto.Name,
@@ -65,6 +70,52 @@ namespace e_shop_backend_esense.Controllers
                         .ToListAsync();
 
             return Ok(tree);
+        }
+
+        [HttpGet("All")]
+        public async Task<IActionResult> GetCategories()
+        {
+            var categories = await _context.Categories
+                        .Where(x => x.ParentCategoryId == null)
+                        .Include(x => x.SubCategories)
+                        .ThenInclude(x => x.SubCategories)
+                        .ToListAsync();
+
+            return Ok(categories);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
+                return NotFound();
+
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> DeleteCategory([FromBody] CategoryDTO dto, int id)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var category = await _context.Categories.FindAsync(id);
+
+            if (category == null)
+                return BadRequest();
+
+            category.Name = dto.Name;
+
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
+
+            return Ok(category);
         }
 
     }

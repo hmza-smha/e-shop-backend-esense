@@ -1,4 +1,5 @@
 ﻿using e_shop_backend_esense.Data;
+using e_shop_backend_esense.DTOs;
 using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,26 +17,6 @@ namespace e_shop_backend_esense.Controllers
         public ProductsController(EShopDbContext context)
         {
             _context = context;
-        }
-
-        [HttpGet("Tree")]
-        public async Task<IActionResult> GetTree()
-        {
-            var catergoriesTree = await _context.Categories
-                .Include(x => x.SubCategories)
-                .Where(x => x.ParentCategory == null)
-                .Select(x => new
-                {
-                    x.Name,
-                    children = x.SubCategories.Select(c => new
-                    {
-                        c.Name,
-                        children = c.SubCategories.Select(c => c.Name)
-                    })
-                })
-                .ToListAsync();
-
-            return Ok(catergoriesTree);
         }
 
         [HttpGet]
@@ -136,6 +117,18 @@ namespace e_shop_backend_esense.Controllers
             return Ok(cat);
         }
 
+        [HttpGet("All")]
+        public async Task<IActionResult> GetAllProducts(int skip, int take)
+        {
+            var products = await _context.Products
+                .Include(x => x.Category)
+                .Include(x => x.Reviews)
+                .Skip(skip)
+                .Take(take)
+                .ToListAsync();
+
+            return Ok(products);
+        }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
@@ -147,6 +140,35 @@ namespace e_shop_backend_esense.Controllers
 
             if (product == null)
                 return NotFound();
+
+            return Ok(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddProduct([FromBody] ProductDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var product = new Product
+            {
+                Name = dto.Name,
+                ImageURL = dto.ImageURL,
+                Description = dto.Description,
+                AdditionalInfo = dto.Name,
+                Price = dto.Price,
+                OldPrice = dto.OldPrice,
+                Available = dto.Available,
+                InStuck = dto.InStuck,
+                Rate = dto.Rate,
+                CategoryId = dto.CategoryId
+            };
+
+
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
 
             return Ok(product);
         }
