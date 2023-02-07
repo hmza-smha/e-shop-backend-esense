@@ -21,11 +21,12 @@ namespace e_shop_backend_esense.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(int id)
         {
-            var category = await _context.Categories.Include(x=> x.Products).SingleOrDefaultAsync(x => x.Id == id);
+            var category = await _context.Categories
+                .Include(x=> x.Products)
+                .SingleOrDefaultAsync(x => x.Id == id);
+
             if (category == null)
-            {
                 return NotFound();
-            }
 
             return Ok(category);
         }
@@ -60,9 +61,11 @@ namespace e_shop_backend_esense.Controllers
                         .ThenInclude(x => x.SubCategories)
                         .Select(x => new
                         {
+                            x.Id,
                             x.Name,
                             children = x.SubCategories.Select(x => new
                             {
+                                x.Id,
                                 x.Name,
                                 children = x.SubCategories.Select(x => x.Name)
                             })
@@ -75,11 +78,7 @@ namespace e_shop_backend_esense.Controllers
         [HttpGet("All")]
         public async Task<IActionResult> GetCategories()
         {
-            var categories = await _context.Categories
-                        .Where(x => x.ParentCategoryId == null)
-                        .Include(x => x.SubCategories)
-                        .ThenInclude(x => x.SubCategories)
-                        .ToListAsync();
+            var categories = await _context.Categories.ToListAsync();
 
             return Ok(categories);
         }
@@ -98,7 +97,7 @@ namespace e_shop_backend_esense.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> DeleteCategory([FromBody] CategoryDTO dto, int id)
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryDTO dto, int id)
         {
             if(!ModelState.IsValid)
             {

@@ -21,10 +21,10 @@ namespace e_shop_backend_esense.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetProducts(
-            string? categoryName, 
-            string? textSearch, 
-            bool? inStuck, 
-            bool? available, 
+            string? categoryName,
+            string? textSearch,
+            bool? inStuck,
+            bool? available,
             decimal? priceFrom,
             decimal? priceTo
             ) {
@@ -38,22 +38,25 @@ namespace e_shop_backend_esense.Controllers
             if (available == false)
                 available = null;
 
-            var cat = await _context.Categories
+            var productsTree = await _context.Categories
                 .Include(x => x.Products)
                 .Include(x => x.SubCategories)
-                    .ThenInclude(x => x.Products)
+                .ThenInclude(x => x.Products)
                 .Where(x => x.Name.ToLower() == categoryName.ToLower())
                 .Select(x => new
                 {
+                    // Category at level 0
+                    x.Id,
                     x.Name,
                     products = x.Products
                     .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
                     .Where(x => inStuck != null ? x.InStuck == inStuck : true)
-                    .Where(x => available !=  null ? x.Available == available : true)
+                    .Where(x => available != null ? x.Available == available : true)
                     .Where(x => priceFrom != null ? x.Price >= priceFrom : x.Price >= 0)
                     .Where(x => priceTo != null ? x.Price <= priceTo : true)
                     .Select(x => new
                     {
+                        // Products at level 0
                         x.Id,
                         x.Name,
                         x.Price,
@@ -67,6 +70,8 @@ namespace e_shop_backend_esense.Controllers
                     }),
                     subProducts = x.SubCategories.Select(c => new
                     {
+                        // Category at level 1
+                        c.Id,
                         c.Name,
                         products = c.Products
                         .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
@@ -76,6 +81,7 @@ namespace e_shop_backend_esense.Controllers
                         .Where(x => priceTo != null ? x.Price <= priceTo : true)
                         .Select(x => new
                         {
+                            // Products at level 1
                             x.Id,
                             x.Name,
                             x.Price,
@@ -89,6 +95,8 @@ namespace e_shop_backend_esense.Controllers
                         }),
                         subProducts = c.SubCategories.Select(c => new
                         {
+                            // Category at level 2
+                            c.Id,
                             c.Name,
                             products = c.Products
                             .Where(x => textSearch != null ? x.Name.Contains(textSearch) : true)
@@ -98,6 +106,7 @@ namespace e_shop_backend_esense.Controllers
                             .Where(x => priceTo != null ? x.Price <= priceTo : true)
                             .Select(x => new
                             {
+                                // Products at level 2
                                 x.Id,
                                 x.Name,
                                 x.Price,
@@ -114,17 +123,20 @@ namespace e_shop_backend_esense.Controllers
                 })
                 .SingleOrDefaultAsync();
 
-            return Ok(cat);
+            return Ok(productsTree);
         }
 
         [HttpGet("All")]
-        public async Task<IActionResult> GetAllProducts(int skip, int take)
+        public async Task<IActionResult> GetAllProducts(int? skip, int? take)
         {
+
+            if (skip < 0 || take < 0) return BadRequest();
+
             var products = await _context.Products
                 .Include(x => x.Category)
                 .Include(x => x.Reviews)
-                .Skip(skip)
-                .Take(take)
+                .Skip(skip ?? 0)
+                .Take(take ?? 10)
                 .ToListAsync();
 
             return Ok(products);
@@ -171,6 +183,20 @@ namespace e_shop_backend_esense.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(product);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+
+            if (product == null)
+                return NotFound();
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
 
     }

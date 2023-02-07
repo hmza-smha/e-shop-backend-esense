@@ -19,7 +19,7 @@ namespace e_shop_backend_esense.Data
             SeedCategories(builder);
             SeedCars(builder);
             SeedElectronics(builder);
-        }
+    }
 
         private void SeedCategories(ModelBuilder builder)
         {
@@ -27,58 +27,43 @@ namespace e_shop_backend_esense.Data
                 new Category() { Id = 1, Name = "Cars" },
                 new Category() { Id = 11, Name = "BMW", ParentCategoryId = 1 },
                 new Category() { Id = 12, Name = "Honda", ParentCategoryId = 1 },
-
                 new Category() { Id = 13, Name = "Toyouta", ParentCategoryId = 1 },
+                new Category() { Id = 14, Name = "Mercedes", ParentCategoryId = 1 },
+
                 new Category() { Id = 23, Name = "Lexus", ParentCategoryId = 13 },
 
-                new Category() { Id = 14, Name = "Mercedes", ParentCategoryId = 1 },
                 new Category() { Id = 24, Name = "Maybach", ParentCategoryId = 14 },
                 new Category() { Id = 25, Name = "Benz", ParentCategoryId = 14 },
                 new Category() { Id = 26, Name = "AMG", ParentCategoryId = 14 },
 
                 new Category() { Id = 2, Name = "Electronics" },
                 new Category() { Id = 15, Name = "Laptops", ParentCategoryId = 2 },
+                new Category() { Id = 17, Name = "Monitors", ParentCategoryId = 2 },
+                new Category() { Id = 16, Name = "PC", ParentCategoryId = 2 },
+
                 new Category() { Id = 27, Name = "HP", ParentCategoryId = 15 },
                 new Category() { Id = 28, Name = "Acer", ParentCategoryId = 15 },
                 new Category() { Id = 29, Name = "Dell", ParentCategoryId = 15 },
 
-                new Category() { Id = 17, Name = "Monitors", ParentCategoryId = 2 },
                 new Category() { Id = 30, Name = "LG", ParentCategoryId = 17 },
-                new Category() { Id = 31, Name = "Samsung", ParentCategoryId = 17 },
-
-                new Category() { Id = 16, Name = "PC", ParentCategoryId = 2 },
-
-                new Category() { Id = 3, Name = "Phones" },
-                new Category() { Id = 21, Name = "Apple", ParentCategoryId = 3 },
-                new Category() { Id = 22, Name = "Huawei", ParentCategoryId = 3 },
-
-                new Category() { Id = 4, Name = "Clouthes" },
-                new Category() { Id = 18, Name = "Men", ParentCategoryId = 4 },
-                new Category() { Id = 19, Name = "Women", ParentCategoryId = 4 },
-                new Category() { Id = 20, Name = "Kid", ParentCategoryId = 4 },
-
-                new Category() { Id = 5, Name = "Books" },
-                new Category() { Id = 6, Name = "Books Sub-Category 1", ParentCategoryId = 5 },
-                new Category() { Id = 7, Name = "Books Sub-Category 2", ParentCategoryId = 5 },
-
-                new Category() { Id = 8, Name = "Category 3" }
+                new Category() { Id = 31, Name = "Samsung", ParentCategoryId = 17 }
             );
         }
 
         private void SeedElectronics(ModelBuilder builder)
         {
             // Seed Electronics
-            Product[] laptops = new Product[5];
-            Product[] pc = new Product[5];
-            Product[] monitors = new Product[5];
-            Product[] dell = new Product[5];
-            Product[] hp = new Product[5];
-            Product[] acer = new Product[5];
-            Product[] lg = new Product[5];
-            Product[] samsung = new Product[5];
+            Product[] laptops = new Product[3];
+            Product[] pc = new Product[3];
+            Product[] monitors = new Product[3];
+            Product[] dell = new Product[3];
+            Product[] hp = new Product[3];
+            Product[] acer = new Product[3];
+            Product[] lg = new Product[3];
+            Product[] samsung = new Product[3];
             int id = 90;
 
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < 3; i++)
             {
 
                 laptops[i] = new Product();
@@ -184,7 +169,7 @@ namespace e_shop_backend_esense.Data
                 {
                     Id = ++id,
                     CategoryId = 30, // lg Id
-                    Name = "benz " + i,
+                    Name = "lg " + i,
                     ImageURL = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
@@ -224,17 +209,17 @@ namespace e_shop_backend_esense.Data
         private void SeedCars(ModelBuilder builder)
         {
             // Cars
-            Product[] bmw = new Product[10];
-            Product[] honda = new Product[10];
-            Product[] toyota = new Product[10];
-            Product[] mercedes = new Product[10];
-            Product[] lexus = new Product[10];
-            Product[] maybach = new Product[10];
-            Product[] benz = new Product[10];
-            Product[] amg = new Product[10];
+            Product[] bmw = new Product[3];
+            Product[] honda = new Product[3];
+            Product[] toyota = new Product[3];
+            Product[] mercedes = new Product[3];
+            Product[] lexus = new Product[3];
+            Product[] maybach = new Product[3];
+            Product[] benz = new Product[3];
+            Product[] amg = new Product[3];
             int id = 1;
 
-            for (var i = 0; i < 10; i++)
+            for (var i = 0; i < 3; i++)
             {
 
                 bmw[i] = new Product();
@@ -380,7 +365,7 @@ namespace e_shop_backend_esense.Data
         private int GetRandomNumber(int from, int to)
         {
             Random rand = new Random();
-            return rand.Next(from, to); // 0, 99 => returns random number between 0-99
+            return rand.Next(from, to); // 0, 100 => returns random number between [0-100)
         }
     }
 }
