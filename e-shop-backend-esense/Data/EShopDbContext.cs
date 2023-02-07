@@ -9,6 +9,8 @@ namespace e_shop_backend_esense.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Review> Reviews { get; set; }
+
         public EShopDbContext(DbContextOptions opt) : base(opt)
         {
         }
