@@ -1,5 +1,5 @@
 ﻿using e_shop_backend_esense.Data;
-using e_shop_backend_esense.DTOs;
+using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +33,7 @@ namespace e_shop_backend_esense.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddCategory([FromBody] CategoryDTO dto, int? parentCategoryId)
+        public async Task<IActionResult> AddCategory([FromBody] CategoryDto dto, int? parentCategoryId)
         {
             if (!ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace e_shop_backend_esense.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory([FromBody] CategoryDTO dto, int id)
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryDto dto, int id)
         {
             if(!ModelState.IsValid)
             {

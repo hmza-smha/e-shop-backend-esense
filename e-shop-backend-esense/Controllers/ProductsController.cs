@@ -1,5 +1,5 @@
 ﻿using e_shop_backend_esense.Data;
-using e_shop_backend_esense.DTOs;
+using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -157,7 +157,7 @@ namespace e_shop_backend_esense.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromBody] ProductDTO dto)
+        public async Task<IActionResult> AddProduct([FromBody] ProductDto dto)
         {
             if (!ModelState.IsValid)
             {

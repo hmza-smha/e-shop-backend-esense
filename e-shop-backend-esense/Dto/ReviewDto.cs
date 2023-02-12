@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace e_shop_backend_esense.DTOs
+namespace e_shop_backend_esense.Dto
 {
-    public class ReviewDTO
+    public class ReviewDto
     {
         [Required]
         public string Username { get; set; }
