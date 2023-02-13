@@ -1,11 +1,10 @@
 ﻿using e_shop_backend_esense.Data;
+using e_shop_backend_esense.Domain.Filters;
 using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Linq.Expressions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
 
 namespace e_shop_backend_esense.Controllers
 {
@@ -28,7 +27,8 @@ namespace e_shop_backend_esense.Controllers
             bool? isAvailable,
             decimal? priceFrom,
             decimal? priceTo,
-            string? sortby)
+            string? sort,
+            string? order)
         {
 
             if (categoryId == null) categoryId = 1;
@@ -56,12 +56,12 @@ namespace e_shop_backend_esense.Controllers
                 .Where(p => isAvailable != null ? p.IsAvailable == isAvailable : true)
                 .Where(p => priceFrom != null ? p.Price >= priceFrom : true)
                 .Where(p => priceTo != null ? p.Price <= priceTo : true)
-                //.OrderBy(p => p.Name)
                 .Select(p => new
                 {
                     p.Id,
                     p.Name,
                     p.Price,
+                    p.Rate,
                     p.IsInStock,
                     p.OldPrice,
                     p.ImageUrl,
@@ -72,39 +72,30 @@ namespace e_shop_backend_esense.Controllers
                 .ToList();
 
 
-
-            sortby = "price,des";
-            var sortFilter = sortby.Split(",");
-
-
-            if (sortFilter[0] == "price")
+            if (sort?.ToUpper() == Sort.PRICE)
             {
-                if (sortFilter[1] == "des")
-                {
+                if (order?.ToUpper() == Order.DESC)
                     return Ok(products.OrderByDescending(x => x.Price));
-                }
                 else
-                {
                     return Ok(products.OrderBy(x => x.Price));
-                }
             }
-            else if (sortFilter[0] == "name")
+            else if (sort?.ToUpper() == Sort.NAME)
             {
-                if (sortFilter[1] == "des")
-                {
+                if (order?.ToUpper() == Order.DESC)
                     return Ok(products.OrderByDescending(x => x.Name));
-                }
                 else
-                {
                     return Ok(products.OrderBy(x => x.Name));
-                }
-
+            }
+            else if (sort?.ToUpper() == Sort.RATE)
+            {
+                if (order?.ToUpper() == Order.DESC)
+                    return Ok(products.OrderByDescending(x => x.Rate));
+                else
+                    return Ok(products.OrderBy(x => x.Rate));
             }
 
-            return Ok();
-
+            return Ok(products.OrderByDescending(x => x.Rate));
         }
-
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int? id)

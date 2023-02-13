@@ -12,8 +12,8 @@ using e_shop_backend_esense.Data;
 namespace e_shop_backend_esense.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    [Migration("20230213071400_seed_all_data")]
-    partial class seed_all_data
+    [Migration("20230213164834_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -207,12 +207,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "BMW 0",
                             OldPrice = 50m,
-                            Price = 52m,
-                            Rate = 3
+                            Price = 228m,
+                            Rate = 5
                         },
                         new
                         {
@@ -221,12 +221,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
-                            IsInStock = true,
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "BMW 1",
                             OldPrice = 50m,
-                            Price = 305m,
-                            Rate = 4
+                            Price = 463m,
+                            Rate = 2
                         },
                         new
                         {
@@ -239,8 +239,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = false,
                             Name = "BMW 2",
                             OldPrice = 50m,
-                            Price = 400m,
-                            Rate = 2
+                            Price = 378m,
+                            Rate = 1
                         },
                         new
                         {
@@ -249,11 +249,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "honda 0",
                             OldPrice = 500m,
-                            Price = 68m,
+                            Price = 463m,
                             Rate = 1
                         },
                         new
@@ -264,11 +264,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = true,
+                            IsInStock = false,
                             Name = "honda 1",
                             OldPrice = 500m,
-                            Price = 260m,
-                            Rate = 5
+                            Price = 204m,
+                            Rate = 2
                         },
                         new
                         {
@@ -277,12 +277,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
-                            IsInStock = false,
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "honda 2",
                             OldPrice = 500m,
-                            Price = 182m,
-                            Rate = 3
+                            Price = 178m,
+                            Rate = 0
                         },
                         new
                         {
@@ -292,11 +292,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = false,
+                            IsInStock = true,
                             Name = "toyota 0",
                             OldPrice = 500m,
-                            Price = 302m,
-                            Rate = 1
+                            Price = 54m,
+                            Rate = 4
                         },
                         new
                         {
@@ -305,11 +305,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = false,
                             Name = "toyota 1",
                             OldPrice = 500m,
-                            Price = 317m,
+                            Price = 287m,
                             Rate = 0
                         },
                         new
@@ -320,11 +320,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = true,
-                            IsInStock = true,
+                            IsInStock = false,
                             Name = "toyota 2",
                             OldPrice = 500m,
-                            Price = 96m,
-                            Rate = 1
+                            Price = 339m,
+                            Rate = 4
                         },
                         new
                         {
@@ -333,11 +333,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
-                            IsInStock = false,
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "mercedes 0",
                             OldPrice = 500m,
-                            Price = 104m,
+                            Price = 222m,
                             Rate = 1
                         },
                         new
@@ -347,12 +347,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
-                            IsInStock = true,
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "mercedes 1",
                             OldPrice = 500m,
-                            Price = 398m,
-                            Rate = 0
+                            Price = 90m,
+                            Rate = 4
                         },
                         new
                         {
@@ -362,10 +362,10 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = true,
-                            IsInStock = false,
+                            IsInStock = true,
                             Name = "mercedes 2",
                             OldPrice = 500m,
-                            Price = 135m,
+                            Price = 444m,
                             Rate = 3
                         },
                         new
@@ -375,12 +375,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
-                            IsInStock = true,
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "lexus 0",
                             OldPrice = 500m,
-                            Price = 383m,
-                            Rate = 5
+                            Price = 294m,
+                            Rate = 1
                         },
                         new
                         {
@@ -389,12 +389,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = true,
                             Name = "lexus 1",
                             OldPrice = 500m,
-                            Price = 440m,
-                            Rate = 5
+                            Price = 117m,
+                            Rate = 1
                         },
                         new
                         {
@@ -404,11 +404,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = false,
+                            IsInStock = true,
                             Name = "lexus 2",
                             OldPrice = 500m,
-                            Price = 202m,
-                            Rate = 2
+                            Price = 76m,
+                            Rate = 5
                         },
                         new
                         {
@@ -421,8 +421,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = false,
                             Name = "maybach 0",
                             OldPrice = 500m,
-                            Price = 350m,
-                            Rate = 3
+                            Price = 71m,
+                            Rate = 2
                         },
                         new
                         {
@@ -435,8 +435,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = true,
                             Name = "maybach 1",
                             OldPrice = 500m,
-                            Price = 74m,
-                            Rate = 2
+                            Price = 405m,
+                            Rate = 1
                         },
                         new
                         {
@@ -445,12 +445,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = false,
                             Name = "maybach 2",
                             OldPrice = 500m,
-                            Price = 207m,
-                            Rate = 3
+                            Price = 303m,
+                            Rate = 0
                         },
                         new
                         {
@@ -459,12 +459,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "benz 0",
                             OldPrice = 500m,
-                            Price = 282m,
-                            Rate = 5
+                            Price = 121m,
+                            Rate = 3
                         },
                         new
                         {
@@ -473,11 +473,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "benz 1",
                             OldPrice = 500m,
-                            Price = 421m,
+                            Price = 440m,
                             Rate = 0
                         },
                         new
@@ -487,11 +487,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = false,
                             Name = "benz 2",
                             OldPrice = 500m,
-                            Price = 303m,
+                            Price = 401m,
                             Rate = 4
                         },
                         new
@@ -505,8 +505,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = true,
                             Name = "amg 0",
                             OldPrice = 500m,
-                            Price = 112m,
-                            Rate = 0
+                            Price = 354m,
+                            Rate = 3
                         },
                         new
                         {
@@ -516,11 +516,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = false,
+                            IsInStock = true,
                             Name = "amg 1",
                             OldPrice = 500m,
-                            Price = 125m,
-                            Rate = 2
+                            Price = 69m,
+                            Rate = 1
                         },
                         new
                         {
@@ -533,7 +533,7 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = false,
                             Name = "amg 2",
                             OldPrice = 500m,
-                            Price = 428m,
+                            Price = 290m,
                             Rate = 1
                         },
                         new
@@ -543,12 +543,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 15,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
-                            IsInStock = true,
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "laptops 0",
                             OldPrice = 500m,
-                            Price = 170m,
-                            Rate = 1
+                            Price = 495m,
+                            Rate = 3
                         },
                         new
                         {
@@ -557,12 +557,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 15,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = true,
                             Name = "laptops 1",
                             OldPrice = 500m,
-                            Price = 133m,
-                            Rate = 3
+                            Price = 132m,
+                            Rate = 1
                         },
                         new
                         {
@@ -571,11 +571,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 15,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = false,
                             Name = "laptops 2",
                             OldPrice = 500m,
-                            Price = 317m,
+                            Price = 70m,
                             Rate = 2
                         },
                         new
@@ -586,10 +586,10 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = false,
+                            IsInStock = true,
                             Name = "pc 0",
                             OldPrice = 500m,
-                            Price = 142m,
+                            Price = 451m,
                             Rate = 1
                         },
                         new
@@ -599,12 +599,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 16,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
-                            IsInStock = false,
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "pc 1",
                             OldPrice = 500m,
-                            Price = 177m,
-                            Rate = 1
+                            Price = 434m,
+                            Rate = 2
                         },
                         new
                         {
@@ -613,12 +613,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 16,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = true,
                             Name = "pc 2",
                             OldPrice = 500m,
-                            Price = 289m,
-                            Rate = 2
+                            Price = 451m,
+                            Rate = 5
                         },
                         new
                         {
@@ -631,8 +631,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = false,
                             Name = "hp 0",
                             OldPrice = 400m,
-                            Price = 219m,
-                            Rate = 3
+                            Price = 442m,
+                            Rate = 2
                         },
                         new
                         {
@@ -641,12 +641,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 27,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = false,
                             Name = "hp 1",
                             OldPrice = 400m,
-                            Price = 155m,
-                            Rate = 5
+                            Price = 307m,
+                            Rate = 2
                         },
                         new
                         {
@@ -659,8 +659,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = false,
                             Name = "hp 2",
                             OldPrice = 400m,
-                            Price = 61m,
-                            Rate = 3
+                            Price = 147m,
+                            Rate = 4
                         },
                         new
                         {
@@ -670,10 +670,10 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = true,
-                            IsInStock = true,
+                            IsInStock = false,
                             Name = "dell 0",
                             OldPrice = 250m,
-                            Price = 444m,
+                            Price = 249m,
                             Rate = 0
                         },
                         new
@@ -683,12 +683,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 29,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
-                            IsInStock = false,
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "dell 1",
                             OldPrice = 250m,
-                            Price = 245m,
-                            Rate = 2
+                            Price = 146m,
+                            Rate = 5
                         },
                         new
                         {
@@ -697,12 +697,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 29,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
-                            IsInStock = true,
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "dell 2",
                             OldPrice = 250m,
-                            Price = 129m,
-                            Rate = 4
+                            Price = 314m,
+                            Rate = 2
                         },
                         new
                         {
@@ -711,12 +711,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 28,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
+                            IsAvailable = false,
                             IsInStock = true,
                             Name = "maybach 0",
                             OldPrice = 100m,
-                            Price = 357m,
-                            Rate = 4
+                            Price = 199m,
+                            Rate = 1
                         },
                         new
                         {
@@ -729,8 +729,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = true,
                             Name = "maybach 1",
                             OldPrice = 100m,
-                            Price = 472m,
-                            Rate = 3
+                            Price = 138m,
+                            Rate = 1
                         },
                         new
                         {
@@ -739,12 +739,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 28,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "maybach 2",
                             OldPrice = 100m,
-                            Price = 176m,
-                            Rate = 2
+                            Price = 239m,
+                            Rate = 1
                         },
                         new
                         {
@@ -753,12 +753,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 30,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
-                            IsInStock = false,
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "lg 0",
                             OldPrice = 1500m,
-                            Price = 57m,
-                            Rate = 5
+                            Price = 71m,
+                            Rate = 4
                         },
                         new
                         {
@@ -767,11 +767,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 30,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = true,
-                            IsInStock = false,
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "lg 1",
                             OldPrice = 1500m,
-                            Price = 136m,
+                            Price = 125m,
                             Rate = 2
                         },
                         new
@@ -781,11 +781,11 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 30,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
-                            IsInStock = false,
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "lg 2",
                             OldPrice = 1500m,
-                            Price = 279m,
+                            Price = 219m,
                             Rate = 2
                         },
                         new
@@ -795,12 +795,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 31,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "samsung 0",
                             OldPrice = 1000m,
-                            Price = 123m,
-                            Rate = 4
+                            Price = 497m,
+                            Rate = 5
                         },
                         new
                         {
@@ -813,8 +813,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = false,
                             Name = "samsung 1",
                             OldPrice = 1000m,
-                            Price = 301m,
-                            Rate = 2
+                            Price = 71m,
+                            Rate = 0
                         },
                         new
                         {
@@ -824,11 +824,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = false,
+                            IsInStock = true,
                             Name = "samsung 2",
                             OldPrice = 1000m,
-                            Price = 319m,
-                            Rate = 3
+                            Price = 230m,
+                            Rate = 5
                         },
                         new
                         {
@@ -838,11 +838,11 @@ namespace e_shop_backend_esense.Migrations
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
                             IsAvailable = false,
-                            IsInStock = true,
+                            IsInStock = false,
                             Name = "monitors 0",
                             OldPrice = 200m,
-                            Price = 205m,
-                            Rate = 1
+                            Price = 269m,
+                            Rate = 0
                         },
                         new
                         {
@@ -855,8 +855,8 @@ namespace e_shop_backend_esense.Migrations
                             IsInStock = true,
                             Name = "monitors 1",
                             OldPrice = 200m,
-                            Price = 140m,
-                            Rate = 4
+                            Price = 423m,
+                            Rate = 5
                         },
                         new
                         {
@@ -865,12 +865,12 @@ namespace e_shop_backend_esense.Migrations
                             CategoryId = 17,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                             ImageUrl = "https://via.placeholder.com/600x800",
-                            IsAvailable = false,
+                            IsAvailable = true,
                             IsInStock = false,
                             Name = "monitors 2",
                             OldPrice = 200m,
-                            Price = 279m,
-                            Rate = 0
+                            Price = 69m,
+                            Rate = 5
                         });
                 });
 
@@ -906,7 +906,7 @@ namespace e_shop_backend_esense.Migrations
             modelBuilder.Entity("e_shop_backend_esense.Models.Category", b =>
                 {
                     b.HasOne("e_shop_backend_esense.Models.Category", "ParentCategory")
-                        .WithMany()
+                        .WithMany("SubCategories")
                         .HasForeignKey("ParentCategoryId");
 
                     b.Navigation("ParentCategory");
@@ -937,6 +937,8 @@ namespace e_shop_backend_esense.Migrations
             modelBuilder.Entity("e_shop_backend_esense.Models.Category", b =>
                 {
                     b.Navigation("Products");
+
+                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("e_shop_backend_esense.Models.Product", b =>
