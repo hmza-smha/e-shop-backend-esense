@@ -7,7 +7,7 @@ namespace e_shop_backend_esense.Dto
         [Required]
         public string Name { get; set; }
 
-        public string? ImageURL { get; set; }
+        public string? ImageUrl { get; set; }
 
         public string? Description { get; set; }
 
@@ -17,9 +17,9 @@ namespace e_shop_backend_esense.Dto
 
         public decimal? OldPrice { get; set; }
 
-        public bool InStuck { get; set; }
+        public bool IsInStock { get; set; }
 
-        public bool Available { get; set; }
+        public bool IsIsAvailable { get; set; }
 
         public int? Rate { get; set; }
 

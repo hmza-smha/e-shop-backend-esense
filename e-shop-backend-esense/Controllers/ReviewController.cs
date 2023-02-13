@@ -65,6 +65,12 @@ namespace e_shop_backend_esense.Controllers
         {
             var review = await _context.Reviews
                 .Where(x => x.ProductId == productId)
+                .Select(x => new
+                {
+                    x.Username, 
+                    x.Rate,
+                    x.Description
+                })
                 .ToListAsync();
 
             if (review == null)

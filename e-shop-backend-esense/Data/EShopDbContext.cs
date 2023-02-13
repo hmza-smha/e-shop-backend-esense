@@ -21,7 +21,7 @@ namespace e_shop_backend_esense.Data
             SeedCategories(builder);
             SeedCars(builder);
             SeedElectronics(builder);
-    }
+        }
 
         private void SeedCategories(ModelBuilder builder)
         {
@@ -82,12 +82,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 15, // laptops Id
                     Name = "laptops " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -97,12 +97,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 16, // pc Id
                     Name = "pc " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(1, 6),
                     AdditionalInfo = "{}"
                 };
@@ -112,12 +112,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 17, // monitors Id
                     Name = "monitors " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 200,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -127,12 +127,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 29, // dell Id
                     Name = "dell " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 250,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -142,12 +142,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 27, // hp Id
                     Name = "hp " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 400,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -157,12 +157,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 28, // acer Id
                     Name = "maybach " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 100,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -172,12 +172,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 30, // lg Id
                     Name = "lg " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 1500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -187,12 +187,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 31, // samsung Id
                     Name = "samsung " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 1000,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -238,12 +238,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 11, // BMW Id
                     Name = "BMW " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice =50,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -253,12 +253,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 12, // BMW Id
                     Name = "honda " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -268,12 +268,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 13, // toyota Id
                     Name = "toyota " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -283,12 +283,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 14, // BMW Id
                     Name = "mercedes " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -298,12 +298,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 23, // lexus Id
                     Name = "lexus " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -313,12 +313,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 24, // maybach Id
                     Name = "maybach " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -328,12 +328,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 25, // benz Id
                     Name = "benz " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };
@@ -343,12 +343,12 @@ namespace e_shop_backend_esense.Data
                     Id = ++id,
                     CategoryId = 26, // amg Id
                     Name = "amg " + i,
-                    ImageURL = "https://via.placeholder.com/600x800",
+                    ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),
                     OldPrice = 500,
-                    InStuck = GetRandomNumber(1, 10) > 5 ? true : false,
-                    Available = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsInStock = GetRandomNumber(1, 10) > 5 ? true : false,
+                    IsAvailable = GetRandomNumber(1, 10) > 5 ? true : false,
                     Rate = GetRandomNumber(0, 6),
                     AdditionalInfo = "{}"
                 };

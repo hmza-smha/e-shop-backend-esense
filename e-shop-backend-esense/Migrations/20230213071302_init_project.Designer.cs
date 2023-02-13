@@ -12,8 +12,8 @@ using e_shop_backend_esense.Data;
 namespace e_shop_backend_esense.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    [Migration("20230204112810_add_rate_to_product_tbl")]
-    partial class add_rate_to_product_tbl
+    [Migration("20230213071302_init_project")]
+    partial class init_project
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,19 +57,19 @@ namespace e_shop_backend_esense.Migrations
                     b.Property<string>("AdditionalInfo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Available")
-                        .HasColumnType("bit");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageURL")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("InStuck")
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsInStock")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -118,13 +118,13 @@ namespace e_shop_backend_esense.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Review");
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("e_shop_backend_esense.Models.Category", b =>
                 {
                     b.HasOne("e_shop_backend_esense.Models.Category", "ParentCategory")
-                        .WithMany("SubCategories")
+                        .WithMany()
                         .HasForeignKey("ParentCategoryId");
 
                     b.Navigation("ParentCategory");
@@ -155,8 +155,6 @@ namespace e_shop_backend_esense.Migrations
             modelBuilder.Entity("e_shop_backend_esense.Models.Category", b =>
                 {
                     b.Navigation("Products");
-
-                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("e_shop_backend_esense.Models.Product", b =>

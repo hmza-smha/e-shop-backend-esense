@@ -163,19 +163,19 @@ namespace e_shop_backend_esense.Migrations
                     b.Property<string>("AdditionalInfo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Available")
-                        .HasColumnType("bit");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageURL")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("InStuck")
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsInStock")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -202,673 +202,673 @@ namespace e_shop_backend_esense.Migrations
                         {
                             Id = 2,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "BMW 0",
                             OldPrice = 50m,
-                            Price = 320m,
+                            Price = 52m,
                             Rate = 3
                         },
                         new
                         {
                             Id = 10,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "BMW 1",
                             OldPrice = 50m,
-                            Price = 318m,
-                            Rate = 5
+                            Price = 305m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 18,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 11,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "BMW 2",
                             OldPrice = 50m,
-                            Price = 336m,
-                            Rate = 1
+                            Price = 400m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 3,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "honda 0",
                             OldPrice = 500m,
-                            Price = 334m,
-                            Rate = 0
+                            Price = 68m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 11,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "honda 1",
                             OldPrice = 500m,
-                            Price = 142m,
-                            Rate = 3
+                            Price = 260m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 19,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 12,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "honda 2",
                             OldPrice = 500m,
-                            Price = 482m,
-                            Rate = 0
+                            Price = 182m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 4,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "toyota 0",
                             OldPrice = 500m,
-                            Price = 122m,
-                            Rate = 0
+                            Price = 302m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 12,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "toyota 1",
                             OldPrice = 500m,
-                            Price = 370m,
-                            Rate = 3
+                            Price = 317m,
+                            Rate = 0
                         },
                         new
                         {
                             Id = 20,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 13,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "toyota 2",
                             OldPrice = 500m,
-                            Price = 191m,
-                            Rate = 4
+                            Price = 96m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 5,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "mercedes 0",
                             OldPrice = 500m,
-                            Price = 490m,
-                            Rate = 2
+                            Price = 104m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 13,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "mercedes 1",
                             OldPrice = 500m,
-                            Price = 70m,
-                            Rate = 5
+                            Price = 398m,
+                            Rate = 0
                         },
                         new
                         {
                             Id = 21,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 14,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "mercedes 2",
                             OldPrice = 500m,
-                            Price = 492m,
+                            Price = 135m,
                             Rate = 3
                         },
                         new
                         {
                             Id = 6,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "lexus 0",
                             OldPrice = 500m,
-                            Price = 85m,
-                            Rate = 2
+                            Price = 383m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 14,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "lexus 1",
                             OldPrice = 500m,
-                            Price = 98m,
-                            Rate = 3
+                            Price = 440m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 22,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 23,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "lexus 2",
                             OldPrice = 500m,
-                            Price = 454m,
-                            Rate = 3
+                            Price = 202m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 7,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "maybach 0",
                             OldPrice = 500m,
-                            Price = 220m,
-                            Rate = 0
+                            Price = 350m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 15,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "maybach 1",
                             OldPrice = 500m,
-                            Price = 493m,
-                            Rate = 1
+                            Price = 74m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 23,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 24,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "maybach 2",
                             OldPrice = 500m,
-                            Price = 186m,
-                            Rate = 4
+                            Price = 207m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 8,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "benz 0",
                             OldPrice = 500m,
-                            Price = 138m,
-                            Rate = 0
+                            Price = 282m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 16,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "benz 1",
                             OldPrice = 500m,
-                            Price = 234m,
-                            Rate = 4
+                            Price = 421m,
+                            Rate = 0
                         },
                         new
                         {
                             Id = 24,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 25,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "benz 2",
                             OldPrice = 500m,
-                            Price = 210m,
-                            Rate = 2
+                            Price = 303m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 9,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "amg 0",
                             OldPrice = 500m,
-                            Price = 394m,
+                            Price = 112m,
                             Rate = 0
                         },
                         new
                         {
                             Id = 17,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "amg 1",
                             OldPrice = 500m,
-                            Price = 280m,
-                            Rate = 4
+                            Price = 125m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 25,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 26,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "amg 2",
                             OldPrice = 500m,
-                            Price = 493m,
-                            Rate = 0
+                            Price = 428m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 91,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 15,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "laptops 0",
                             OldPrice = 500m,
-                            Price = 187m,
-                            Rate = 4
+                            Price = 170m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 99,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 15,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "laptops 1",
                             OldPrice = 500m,
-                            Price = 353m,
-                            Rate = 5
+                            Price = 133m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 107,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 15,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "laptops 2",
                             OldPrice = 500m,
-                            Price = 330m,
-                            Rate = 1
+                            Price = 317m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 92,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 16,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "pc 0",
                             OldPrice = 500m,
-                            Price = 471m,
-                            Rate = 2
+                            Price = 142m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 100,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 16,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "pc 1",
                             OldPrice = 500m,
-                            Price = 194m,
-                            Rate = 3
+                            Price = 177m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 108,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 16,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "pc 2",
                             OldPrice = 500m,
-                            Price = 96m,
-                            Rate = 4
+                            Price = 289m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 95,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 27,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "hp 0",
                             OldPrice = 400m,
-                            Price = 146m,
-                            Rate = 4
+                            Price = 219m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 103,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 27,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "hp 1",
                             OldPrice = 400m,
-                            Price = 378m,
-                            Rate = 3
+                            Price = 155m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 111,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 27,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "hp 2",
                             OldPrice = 400m,
-                            Price = 419m,
-                            Rate = 5
+                            Price = 61m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 94,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 29,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "dell 0",
                             OldPrice = 250m,
-                            Price = 459m,
+                            Price = 444m,
                             Rate = 0
                         },
                         new
                         {
                             Id = 102,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 29,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "dell 1",
                             OldPrice = 250m,
-                            Price = 174m,
-                            Rate = 0
+                            Price = 245m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 110,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 29,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "dell 2",
                             OldPrice = 250m,
-                            Price = 233m,
-                            Rate = 5
+                            Price = 129m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 96,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 28,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "maybach 0",
                             OldPrice = 100m,
-                            Price = 268m,
-                            Rate = 0
+                            Price = 357m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 104,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 28,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "maybach 1",
                             OldPrice = 100m,
-                            Price = 377m,
-                            Rate = 2
+                            Price = 472m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 112,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 28,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "maybach 2",
                             OldPrice = 100m,
-                            Price = 459m,
-                            Rate = 5
+                            Price = 176m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 97,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 30,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "lg 0",
                             OldPrice = 1500m,
-                            Price = 227m,
-                            Rate = 2
+                            Price = 57m,
+                            Rate = 5
                         },
                         new
                         {
                             Id = 105,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 30,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "lg 1",
                             OldPrice = 1500m,
-                            Price = 280m,
-                            Rate = 1
+                            Price = 136m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 113,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 30,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "lg 2",
                             OldPrice = 1500m,
-                            Price = 116m,
-                            Rate = 0
+                            Price = 279m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 98,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 31,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "samsung 0",
                             OldPrice = 1000m,
-                            Price = 466m,
-                            Rate = 0
+                            Price = 123m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 106,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 31,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = false,
                             Name = "samsung 1",
                             OldPrice = 1000m,
-                            Price = 76m,
-                            Rate = 3
+                            Price = 301m,
+                            Rate = 2
                         },
                         new
                         {
                             Id = 114,
                             AdditionalInfo = "{}",
-                            Available = true,
                             CategoryId = 31,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "samsung 2",
                             OldPrice = 1000m,
-                            Price = 157m,
-                            Rate = 0
+                            Price = 319m,
+                            Rate = 3
                         },
                         new
                         {
                             Id = 93,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 17,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = true,
                             Name = "monitors 0",
                             OldPrice = 200m,
-                            Price = 498m,
-                            Rate = 3
+                            Price = 205m,
+                            Rate = 1
                         },
                         new
                         {
                             Id = 101,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 17,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = false,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = true,
+                            IsInStock = true,
                             Name = "monitors 1",
                             OldPrice = 200m,
-                            Price = 241m,
-                            Rate = 3
+                            Price = 140m,
+                            Rate = 4
                         },
                         new
                         {
                             Id = 109,
                             AdditionalInfo = "{}",
-                            Available = false,
                             CategoryId = 17,
                             Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
-                            ImageURL = "https://via.placeholder.com/600x800",
-                            InStuck = true,
+                            ImageUrl = "https://via.placeholder.com/600x800",
+                            IsAvailable = false,
+                            IsInStock = false,
                             Name = "monitors 2",
                             OldPrice = 200m,
-                            Price = 173m,
-                            Rate = 5
+                            Price = 279m,
+                            Rate = 0
                         });
                 });
 
@@ -904,7 +904,7 @@ namespace e_shop_backend_esense.Migrations
             modelBuilder.Entity("e_shop_backend_esense.Models.Category", b =>
                 {
                     b.HasOne("e_shop_backend_esense.Models.Category", "ParentCategory")
-                        .WithMany("SubCategories")
+                        .WithMany()
                         .HasForeignKey("ParentCategoryId");
 
                     b.Navigation("ParentCategory");
@@ -935,8 +935,6 @@ namespace e_shop_backend_esense.Migrations
             modelBuilder.Entity("e_shop_backend_esense.Models.Category", b =>
                 {
                     b.Navigation("Products");
-
-                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("e_shop_backend_esense.Models.Product", b =>

@@ -8,5 +8,7 @@ namespace e_shop_backend_esense.Dto
 
         [Required]
         public string Name { get; set; }
+
+        public int? ParentCategoryId { get; set; }
     }
 }

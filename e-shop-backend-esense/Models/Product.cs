@@ -9,7 +9,7 @@ namespace e_shop_backend_esense.Models
         [Required]
         public string Name { get; set; }
 
-        public string? ImageURL { get; set; }
+        public string? ImageUrl { get; set; }
 
         public string? Description { get; set; }
 
@@ -19,9 +19,9 @@ namespace e_shop_backend_esense.Models
 
         public decimal? OldPrice { get; set; }
          
-        public bool InStuck { get; set; }
+        public bool IsInStock { get; set; }
 
-        public bool Available { get; set; }
+        public bool IsAvailable { get; set; }
 
         public int? Rate { get; set; }
 

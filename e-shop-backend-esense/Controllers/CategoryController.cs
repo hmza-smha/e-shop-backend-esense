@@ -18,12 +18,32 @@ namespace e_shop_backend_esense.Controllers
             _context = context;
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetCategory(int id)
+        [HttpGet]
+        public async Task<IActionResult> GetCategory(int? id)
         {
+            if(id == null)
+            {
+                var categories = await _context.Categories
+                .Select(c => new
+                {
+                    c.Id,
+                    c.Name,
+                    c.ParentCategoryId
+                })
+                .ToListAsync();
+
+                return Ok(categories);
+            }
+
             var category = await _context.Categories
-                .Include(x=> x.Products)
-                .SingleOrDefaultAsync(x => x.Id == id);
+                .Select(c => new
+                {
+                    c.Id,
+                    c.Name,
+                    c.ParentCategoryId
+                })
+                .FirstOrDefaultAsync(x => x.Id == id);
+                
 
             if (category == null)
                 return NotFound();
@@ -33,7 +53,7 @@ namespace e_shop_backend_esense.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddCategory([FromBody] CategoryDto dto, int? parentCategoryId)
+        public async Task<IActionResult> AddCategory([FromBody] CategoryDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -43,44 +63,13 @@ namespace e_shop_backend_esense.Controllers
             var category = new Category
             {
                 Name = dto.Name,
-                ParentCategoryId = parentCategoryId
+                ParentCategoryId = dto.ParentCategoryId
             };
 
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
 
             return Ok(category);
-        }
-
-        [HttpGet("Tree")]
-        public async Task<IActionResult> GetCategoriesTree()
-        {
-            var tree = await _context.Categories
-                        .Where(x => x.ParentCategoryId == null)
-                        .Include(x => x.SubCategories)
-                        .ThenInclude(x => x.SubCategories)
-                        .Select(x => new
-                        {
-                            x.Id,
-                            x.Name,
-                            children = x.SubCategories.Select(x => new
-                            {
-                                x.Id,
-                                x.Name,
-                                children = x.SubCategories.Select(x => x.Name)
-                            })
-                        })
-                        .ToListAsync();
-
-            return Ok(tree);
-        }
-
-        [HttpGet("All")]
-        public async Task<IActionResult> GetCategories()
-        {
-            var categories = await _context.Categories.ToListAsync();
-
-            return Ok(categories);
         }
 
         [HttpDelete("{id}")]
@@ -110,6 +99,7 @@ namespace e_shop_backend_esense.Controllers
                 return BadRequest();
 
             category.Name = dto.Name;
+            category.ParentCategoryId = dto.ParentCategoryId;
 
             _context.Categories.Update(category);
             await _context.SaveChangesAsync();
