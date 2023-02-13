@@ -3,6 +3,9 @@ using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Linq.Expressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace e_shop_backend_esense.Controllers
 {
@@ -19,13 +22,23 @@ namespace e_shop_backend_esense.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts(
+        public IActionResult GetProducts(
             int? categoryId,
             bool? isInStock,
             bool? isAvailable,
             decimal? priceFrom,
-            decimal? priceTo)
+            decimal? priceTo,
+            string? sortby)
         {
+
+            if (categoryId == null) categoryId = 1;
+
+            var childrenIds = _context.Categories
+                .Where(x => x.ParentCategoryId == categoryId)
+                .Select(x => x.Id)
+                .ToList();
+
+            childrenIds.Add((int)categoryId);
 
             if (isInStock == false)
             {
@@ -37,12 +50,13 @@ namespace e_shop_backend_esense.Controllers
                 isAvailable = null;
             }
 
-            var products = await _context.Products
-                .Where(p => categoryId != null ? p.CategoryId == categoryId : true)
+            var products = _context.Products
+                .Where(p => childrenIds.Contains(p.CategoryId))
                 .Where(p => isInStock != null ? p.IsInStock == isInStock : true)
                 .Where(p => isAvailable != null ? p.IsAvailable == isAvailable : true)
                 .Where(p => priceFrom != null ? p.Price >= priceFrom : true)
                 .Where(p => priceTo != null ? p.Price <= priceTo : true)
+                //.OrderBy(p => p.Name)
                 .Select(p => new
                 {
                     p.Id,
@@ -55,9 +69,40 @@ namespace e_shop_backend_esense.Controllers
                     p.Description,
                     p.AdditionalInfo,
                 })
-                .ToListAsync();
+                .ToList();
 
-            return Ok(products);
+
+
+            sortby = "price,des";
+            var sortFilter = sortby.Split(",");
+
+
+            if (sortFilter[0] == "price")
+            {
+                if (sortFilter[1] == "des")
+                {
+                    return Ok(products.OrderByDescending(x => x.Price));
+                }
+                else
+                {
+                    return Ok(products.OrderBy(x => x.Price));
+                }
+            }
+            else if (sortFilter[0] == "name")
+            {
+                if (sortFilter[1] == "des")
+                {
+                    return Ok(products.OrderByDescending(x => x.Name));
+                }
+                else
+                {
+                    return Ok(products.OrderBy(x => x.Name));
+                }
+
+            }
+
+            return Ok();
+
         }
 
 
