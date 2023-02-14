@@ -4,6 +4,7 @@ using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
 using e_shop_backend_esense.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Linq.Dynamic.Core;
 
 
@@ -60,9 +61,12 @@ namespace e_shop_backend_esense.Repositories
                 return new List<ProductDto> { product };
             }
 
-            if (filters.CategoryId == null) filters.CategoryId = 1;
-            if (filters.Sort == null) filters.Sort = Sort.RATE;
-            if (filters.Order == null) filters.Order = Order.DESC;
+            if(filters.Take <= 0)
+                filters.Take = 10;
+
+            filters.CategoryId ??= 1;
+            filters.Sort ??= Sort.RATE;
+            filters.Order ??= Order.DESC;
 
             var childrenIds = _context.Categories
                 .Where(x => x.ParentCategoryId == filters.CategoryId)
@@ -79,10 +83,12 @@ namespace e_shop_backend_esense.Repositories
 
             var products = _context.Products
                 .Where(p => childrenIds.Contains(p.CategoryId))
-                .Where(p => filters.IsInStock != null ? p.IsInStock == filters.IsInStock : true)
-                .Where(p => filters.IsAvailable != null ? p.IsAvailable == filters.IsAvailable : true)
-                .Where(p => filters.PriceFrom != null ? p.Price >= filters.PriceFrom : true)
-                .Where(p => filters.PriceTo != null ? p.Price <= filters.PriceTo : true)
+                .Where(p => filters.IsInStock == null || p.IsInStock == filters.IsInStock)
+                .Where(p => filters.IsAvailable == null || p.IsAvailable == filters.IsAvailable)
+                .Where(p => filters.PriceFrom == null || p.Price >= filters.PriceFrom)
+                .Where(p => filters.PriceTo == null || p.Price <= filters.PriceTo)
+                .Skip(filters.Skip)
+                .Take(filters.Take)
                 .Select(p => new ProductDto
                 {
                     Id = p.Id,
