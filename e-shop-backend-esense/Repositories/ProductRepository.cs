@@ -4,6 +4,8 @@ using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
 using e_shop_backend_esense.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
+
 
 namespace e_shop_backend_esense.Repositories
 {
@@ -85,6 +87,8 @@ namespace e_shop_backend_esense.Repositories
             string? order)
         {
             if (categoryId == null) categoryId = 1;
+            if (sort == null) sort = Sort.RATE;
+            if (order == null) order = Order.DESC;
 
             var childrenIds = _context.Categories
                 .Where(x => x.ParentCategoryId == categoryId)
@@ -118,32 +122,10 @@ namespace e_shop_backend_esense.Repositories
                     Description = p.Description,
                     AdditionalInfo = p.AdditionalInfo,
                 })
+                .OrderBy(sort + " " + order)
                 .ToList();
 
-
-            if (sort?.ToUpper() == Sort.PRICE)
-            {
-                if (order?.ToUpper() == Order.DESC)
-                    return products.OrderByDescending(x => x.Price).ToList();
-                else
-                    return products.OrderBy(x => x.Price).ToList();
-            }
-            else if (sort?.ToUpper() == Sort.NAME)
-            {
-                if (order?.ToUpper() == Order.DESC)
-                    return products.OrderByDescending(x => x.Name).ToList();
-                else
-                    return products.OrderBy(x => x.Name).ToList();
-            }
-            else if (sort?.ToUpper() == Sort.RATE)
-            {
-                if (order?.ToUpper() == Order.DESC)
-                    return products.OrderByDescending(x => x.Rate).ToList();
-                else
-                    return products.OrderBy(x => x.Rate).ToList();
-            }
-
-            return products.OrderByDescending(x => x.Rate).ToList();
+            return products;
         }
     }
 }
