@@ -24,6 +24,7 @@ namespace e_shop_backend_esense.Controllers
 
         [HttpGet]
         public IActionResult GetProducts(
+            int? id,
             int? categoryId,
             bool? isInStock,
             bool? isAvailable,
@@ -33,6 +34,7 @@ namespace e_shop_backend_esense.Controllers
             string? order)
         {
             var products = _product.GetProducts(
+                id,
                 categoryId, 
                 isInStock, 
                 isAvailable, 
@@ -43,12 +45,6 @@ namespace e_shop_backend_esense.Controllers
                 );
 
             return Ok(products);
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetProduct(int id)
-        {
-            return Ok(_product.GetProduct(id));
         }
 
         [HttpPost]

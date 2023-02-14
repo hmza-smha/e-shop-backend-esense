@@ -8,6 +8,7 @@ namespace e_shop_backend_esense.Repositories.Interfaces
     {
 
         List<ProductDto> GetProducts(
+            int? id,
             int? categoryId,
             bool? isInStock,
             bool? isAvailable,
@@ -16,8 +17,6 @@ namespace e_shop_backend_esense.Repositories.Interfaces
             string? sort,
             string? order
         );
-
-        ProductDto GetProduct(int id);
 
         Task<ProductDto> AddProduct(ProductDto dto);
 

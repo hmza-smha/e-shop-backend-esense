@@ -51,41 +51,23 @@ namespace e_shop_backend_esense.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public ProductDto GetProduct(int id)
-        {
-            var product = _context.Products
-            .Include(x => x.Reviews)
-            .Select(p => new ProductDto
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Price = p.Price,
-                Rate = p.Rate,
-                IsInStock = p.IsInStock,
-                OldPrice = p.OldPrice,
-                ImageUrl = p.ImageUrl,
-                IsAvailable = p.IsAvailable,
-                Description = p.Description,
-                AdditionalInfo = p.AdditionalInfo,
-                Reviews = p.Reviews
-
-            })
-            .FirstOrDefault(x => x.Id == id);
-
-            if (product == null) throw new NullReferenceException();
-
-            return product;
-        }
-
         public List<ProductDto> GetProducts(
-            int? categoryId, 
-            bool? isInStock, 
-            bool? isAvailable, 
-            decimal? priceFrom, 
-            decimal? priceTo, 
-            string? sort, 
+            int? id,
+            int? categoryId,
+            bool? isInStock,
+            bool? isAvailable,
+            decimal? priceFrom,
+            decimal? priceTo,
+            string? sort,
             string? order)
         {
+
+            if (id != null)
+            {
+                var product = GetProduct(id);
+                return new List<ProductDto> { product };
+            }
+
             if (categoryId == null) categoryId = 1;
             if (sort == null) sort = Sort.RATE;
             if (order == null) order = Order.DESC;
@@ -127,5 +109,33 @@ namespace e_shop_backend_esense.Repositories
 
             return products;
         }
+
+
+        private ProductDto GetProduct(int? id)
+        {
+            var product = _context.Products
+            .Include(x => x.Reviews)
+            .Select(p => new ProductDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Price = p.Price,
+                Rate = p.Rate,
+                IsInStock = p.IsInStock,
+                OldPrice = p.OldPrice,
+                ImageUrl = p.ImageUrl,
+                IsAvailable = p.IsAvailable,
+                Description = p.Description,
+                AdditionalInfo = p.AdditionalInfo,
+                Reviews = p.Reviews
+
+            })
+            .FirstOrDefault(x => x.Id == id);
+
+            if (product == null) throw new NullReferenceException();
+
+            return product;
+        }
+
     }
 }
