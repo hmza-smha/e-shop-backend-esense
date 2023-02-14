@@ -58,6 +58,7 @@ namespace e_shop_backend_esense.Repositories
                 Id = p.Id,
                 Name = p.Name,
                 Price = p.Price,
+                Rate = p.Rate,
                 IsInStock = p.IsInStock,
                 OldPrice = p.OldPrice,
                 ImageUrl = p.ImageUrl,
