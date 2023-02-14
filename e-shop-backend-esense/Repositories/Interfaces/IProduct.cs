@@ -1,22 +1,11 @@
-﻿using e_shop_backend_esense.Dto;
-using e_shop_backend_esense.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using e_shop_backend_esense.Domain.Filters;
+using e_shop_backend_esense.Dto;
 
 namespace e_shop_backend_esense.Repositories.Interfaces
 {
     public interface IProduct
     {
-
-        List<ProductDto> GetProducts(
-            int? id,
-            int? categoryId,
-            bool? isInStock,
-            bool? isAvailable,
-            decimal? priceFrom,
-            decimal? priceTo,
-            string? sort,
-            string? order
-        );
+        List<ProductDto> GetProducts(Filters filters);
 
         Task<ProductDto> AddProduct(ProductDto dto);
 

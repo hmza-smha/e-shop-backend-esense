@@ -22,32 +22,15 @@ namespace e_shop_backend_esense.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult GetProducts(
-            int? id,
-            int? categoryId,
-            bool? isInStock,
-            bool? isAvailable,
-            decimal? priceFrom,
-            decimal? priceTo,
-            string? sort,
-            string? order)
+        [HttpPost]
+        public IActionResult GetProducts([FromBody] Filters filters)
         {
-            var products = _product.GetProducts(
-                id,
-                categoryId, 
-                isInStock, 
-                isAvailable, 
-                priceFrom, 
-                priceTo, 
-                sort, 
-                order
-                );
+            var products = _product.GetProducts(filters);
 
             return Ok(products);
         }
 
-        [HttpPost]
+        [HttpPost("Add")]
         public async Task<IActionResult> AddProduct([FromBody] ProductDto dto)
         {
             if (!ModelState.IsValid) return BadRequest();

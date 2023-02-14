@@ -51,46 +51,38 @@ namespace e_shop_backend_esense.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public List<ProductDto> GetProducts(
-            int? id,
-            int? categoryId,
-            bool? isInStock,
-            bool? isAvailable,
-            decimal? priceFrom,
-            decimal? priceTo,
-            string? sort,
-            string? order)
+        public List<ProductDto> GetProducts(Filters filters)
         {
 
-            if (id != null)
+            if (filters.Id != null)
             {
-                var product = GetProduct(id);
+                var product = GetProduct(filters.Id);
                 return new List<ProductDto> { product };
             }
 
-            if (categoryId == null) categoryId = 1;
-            if (sort == null) sort = Sort.RATE;
-            if (order == null) order = Order.DESC;
+            if (filters.CategoryId == null) filters.CategoryId = 1;
+            if (filters.Sort == null) filters.Sort = Sort.RATE;
+            if (filters.Order == null) filters.Order = Order.DESC;
 
             var childrenIds = _context.Categories
-                .Where(x => x.ParentCategoryId == categoryId)
+                .Where(x => x.ParentCategoryId == filters.CategoryId)
                 .Select(x => x.Id)
                 .ToList();
 
-            childrenIds.Add((int)categoryId);
+            childrenIds.Add((int)filters.CategoryId);
 
-            if (isInStock == false)
-                isInStock = null;
+            if (filters.IsInStock == false)
+                filters.IsInStock = null;
 
-            if (isAvailable == false)
-                isAvailable = null;
+            if (filters.IsAvailable == false)
+                filters.IsAvailable = null;
 
             var products = _context.Products
                 .Where(p => childrenIds.Contains(p.CategoryId))
-                .Where(p => isInStock != null ? p.IsInStock == isInStock : true)
-                .Where(p => isAvailable != null ? p.IsAvailable == isAvailable : true)
-                .Where(p => priceFrom != null ? p.Price >= priceFrom : true)
-                .Where(p => priceTo != null ? p.Price <= priceTo : true)
+                .Where(p => filters.IsInStock != null ? p.IsInStock == filters.IsInStock : true)
+                .Where(p => filters.IsAvailable != null ? p.IsAvailable == filters.IsAvailable : true)
+                .Where(p => filters.PriceFrom != null ? p.Price >= filters.PriceFrom : true)
+                .Where(p => filters.PriceTo != null ? p.Price <= filters.PriceTo : true)
                 .Select(p => new ProductDto
                 {
                     Id = p.Id,
@@ -104,7 +96,7 @@ namespace e_shop_backend_esense.Repositories
                     Description = p.Description,
                     AdditionalInfo = p.AdditionalInfo,
                 })
-                .OrderBy(sort + " " + order)
+                .OrderBy(filters.Sort + " " + filters.Order)
                 .ToList();
 
             return products;
