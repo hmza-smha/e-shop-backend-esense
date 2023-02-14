@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using e_shop_backend_esense.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace e_shop_backend_esense.Dto
 {
     public class ProductDto
     {
+        public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -19,9 +22,11 @@ namespace e_shop_backend_esense.Dto
 
         public bool IsInStock { get; set; }
 
-        public bool IsIsAvailable { get; set; }
+        public bool IsAvailable { get; set; }
 
         public int? Rate { get; set; }
+
+        public List<Review> Reviews { get; set; }
 
         [Required]
         public int CategoryId { get; set; }

@@ -1,6 +1,7 @@
 ﻿using e_shop_backend_esense.Data;
 using e_shop_backend_esense.Dto;
 using e_shop_backend_esense.Models;
+using e_shop_backend_esense.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +13,12 @@ namespace e_shop_backend_esense.Controllers
     public class ReviewController : ControllerBase
     {
         private readonly EShopDbContext _context;
+        private readonly IReview _review;
 
-        public ReviewController(EShopDbContext context)
+
+        public ReviewController(EShopDbContext context, IReview review)
         {
+            _review = review;
             _context = context;
         }
 
@@ -24,59 +28,15 @@ namespace e_shop_backend_esense.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var review = new Review()
-            {
-                Username = dto.Username,
-                Description = dto.Description,
-                Rate = dto.Rate,
-                ProductId = dto.ProductId
-            };
+            await _review.AddReview(dto);
 
-            _context.Reviews.Add(review);
-            await _context.SaveChangesAsync();
-
-            return Ok(review);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateReview([FromBody] ReviewDto dto, int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
-            var review = await _context.Reviews.FindAsync(id);
-
-            if (review == null)
-                return BadRequest();
-
-            review.Description = dto.Description;
-            review.Rate = dto.Rate;
-
-            _context.Reviews.Update(review);
-            await _context.SaveChangesAsync();
-
-            return Ok(review);
+            return Ok(dto);
         }
 
         [HttpGet("{productId}")]
-        public async Task<IActionResult> GetProductReviews(int productId)
+        public IActionResult GetProductReviews(int productId)
         {
-            var review = await _context.Reviews
-                .Where(x => x.ProductId == productId)
-                .Select(x => new
-                {
-                    x.Username, 
-                    x.Rate,
-                    x.Description
-                })
-                .ToListAsync();
-
-            if (review == null)
-                return NotFound();
-
-            return Ok(review);
+            return Ok(_review.GetProductReviews(productId));
         }
     }
 }

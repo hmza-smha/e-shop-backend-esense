@@ -1,4 +1,6 @@
 using e_shop_backend_esense.Data;
+using e_shop_backend_esense.Repositories;
+using e_shop_backend_esense.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -31,6 +33,10 @@ builder.Services.AddCors(options =>
         .AllowAnyOrigin();
     });
 });
+
+builder.Services.AddScoped<ICategory, CategoryRepository>();
+builder.Services.AddScoped<IProduct, ProductRepository>();
+builder.Services.AddScoped<IReview, ReviewRepository>();
 
 var app = builder.Build();
 
