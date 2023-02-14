@@ -156,7 +156,7 @@ namespace e_shop_backend_esense.Data
                 {
                     Id = ++id,
                     CategoryId = 28, // acer Id
-                    Name = "maybach " + i,
+                    Name = "acer " + i,
                     ImageUrl = "https://via.placeholder.com/600x800",
                     Description = "Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat Nostrud duis molestie at dolore.",
                     Price = GetRandomNumber(50, 500),

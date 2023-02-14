@@ -41,14 +41,10 @@ namespace e_shop_backend_esense.Controllers
             childrenIds.Add((int)categoryId);
 
             if (isInStock == false)
-            {
                 isInStock = null;
-            }
 
             if (isAvailable == false)
-            {
                 isAvailable = null;
-            }
 
             var products = _context.Products
                 .Where(p => childrenIds.Contains(p.CategoryId))
@@ -102,7 +98,7 @@ namespace e_shop_backend_esense.Controllers
         {
 
             var product = await _context.Products
-            //.Include(x => x.Reviews)
+            .Include(x => x.Reviews)
             .Where(p => p.Id == id)
             .Select(p => new
             {
@@ -115,15 +111,12 @@ namespace e_shop_backend_esense.Controllers
                 p.IsAvailable,
                 p.Description,
                 p.AdditionalInfo,
-                //p.Reviews
+                p.Reviews
 
             })
             .FirstOrDefaultAsync();
 
-            if (product == null)
-            {
-                return NotFound();
-            }
+            if (product == null) return NotFound();
 
             return Ok(product);
 
@@ -132,10 +125,7 @@ namespace e_shop_backend_esense.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] ProductDto dto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
+            if (!ModelState.IsValid) return BadRequest();
 
             var product = new Product
             {

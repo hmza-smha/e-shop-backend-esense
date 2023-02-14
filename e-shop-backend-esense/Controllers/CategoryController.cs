@@ -45,8 +45,7 @@ namespace e_shop_backend_esense.Controllers
                 .FirstOrDefaultAsync(x => x.Id == id);
                 
 
-            if (category == null)
-                return NotFound();
+            if (category == null) return NotFound();
 
             return Ok(category);
         }
@@ -76,8 +75,8 @@ namespace e_shop_backend_esense.Controllers
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var category = await _context.Categories.FindAsync(id);
-            if (category == null)
-                return NotFound();
+
+            if (category == null) return NotFound();
 
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();

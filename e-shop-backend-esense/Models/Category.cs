@@ -15,6 +15,6 @@ namespace e_shop_backend_esense.Models
 
         public Category? ParentCategory { get; set; }
 
-        public List<Category> SubCategories { get; set; }
+        //public List<Category> SubCategories { get; set; }
     }
 }
